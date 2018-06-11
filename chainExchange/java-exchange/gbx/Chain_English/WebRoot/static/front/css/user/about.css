@@ -1,0 +1,19 @@
+.collapse.in{ overflow:hidden;}
+.list-group-item {width:100%;}
+.panel-body table tr {
+	border-bottom: 1px solid #dddddd;
+}
+.panel-group .panel {
+	margin-top: -1px !important;
+	border-radius: 0 !important;
+}
+.aboutcontent img{width:100%;}
+
+.left_nav a{color:#777;font-size:14px;padding-left:30px;}
+.left_nav>tr:hover,.table>tbody>tr.active>td{background: #f9f5eb !important;}
+.left_nav>tr:hover a,.table>tbody>tr.active>td a{color: #c32116 !important;}
+.left_nav img{height:20px;width:20px;}
+.left_nav span{float:right;}
+.help{margin:20px 0;}
+.help .panel-heading{font-size:18px;padding-left:30px;}
+

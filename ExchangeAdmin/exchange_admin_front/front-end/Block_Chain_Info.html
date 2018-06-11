@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+<style type="text/css">
+	div.error{
+		width: 300px;
+		height: 300px;
+		border: 1px solid red;
+	}
+</style>
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title> - Bootstrap Table</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+
+    <link rel="shortcut icon" href="favicon.ico"> <link href="css/bootstrap.min.css?v=3.3.6" rel="stylesheet">
+    <link href="css/font-awesome.css?v=4.4.0" rel="stylesheet">
+    <link href="css/plugins/bootstrap-table/bootstrap-table.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="js/plugins/layer/skin/layer.css"/>
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/style.css?v=4.1.0" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/custom/custom.css"/>
+    
+
+</head>
+
+<body class="gray-bg">
+    <div class="wrapper wrapper-content animated fadeInRight">
+        
+        
+        
+           <!--custom-->
+           <div class="ibox float-e-margins">
+            <div class="ibox-title">
+                <h5>Basic</h5>
+                <div class="ibox-tools">
+                    <a class="collapse-link">
+                        <i class="fa fa-chevron-up"></i>
+                    </a>
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-wrench"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-user">
+                        <li><a href="#">select1</a>
+                        </li>
+                        <li><a href="#">select2</a>
+                        </li>
+                    </ul>
+                    <a class="close-link">
+                        <i class="fa fa-times"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="ibox-content">
+                <div class="row row-lg">
+                   
+
+                    <div class="col-sm-12">
+                        <div class="toolbar" id="tableToolBar">
+                        	<div class="pull-left col-sm-2 col-md-4 col-lg-4 col-xs-4">
+                        		<button class="btn btn-danger" id="disabledBtn" >Disable</button>
+                        	<button class="btn btn-success" id="enabledBtn">Enable</button> 
+                        	<button class="btn btn-primary " id="addBtn">Add</button>
+                        	<button class="btn btn-info" id="editBtn" >Edit</button>
+                        	</div>
+                          <div class="pull-right col-sm-8 col-md-8 col-lg-8 col-xs-8">
+                          	 <button class="btn pull-right" id="searchBtn">Search</button>
+                          
+                        <input type="text" placeholder="Chain Name" class="searchINput col-sm-2 col-md-2 col-lg-2 col-xs-2" id="searchchainName"/>
+                        <input type="text" placeholder="Status" class="searchINput col-sm-2 col-md-2 col-lg-2 col-xs-2" id="status" />
+                       
+                          </div>
+                        </div>
+                        <div class="example">
+                            
+                            <table id="blockChainInfoTable" data-mobile-responsive="true" style="table-layout:fixed !important;" >
+                                
+                            </table>
+                        </div>
+                   </div>
+                </div>
+            </div>
+        </div>
+           <!--custom-->
+    </div>
+
+   
+   
+
+</body>
+ <div class=" hide" id="addBlockBhainModal">
+ 	<form id="addBlockChainform">
+ 		
+ 		<div class="form-group">
+                   <label class="col-sm-4 control-label">ChainId</label>
+
+                                <div class="col-sm-8">
+                                    <input type="text" placeholder="" class="form-control input-lg m-b" name="chainId" id="chainId">
+                                   
+                                </div>
+                            </div>
+ 	  <div class="form-group">
+                   <label class="col-sm-4 control-label">Chain Name</label>
+                                <div class="col-sm-8">
+       <input type="text" placeholder="" name="chainName" class="form-control input-lg m-b" id="chainName">
+                                </div>
+                            </div>
+        <div class="form-group">
+                   <label class="col-sm-4 control-label">URL</label>
+                                <div class="col-sm-8">
+       <input type="text" placeholder="" name="url" class="form-control input-lg m-b" id="url">
+                                </div>
+                            </div>
+        <div class="form-group">
+                   <label class="col-sm-4 control-label">User Name</label>
+                                <div class="col-sm-8">
+       <input type="text" placeholder="" name="userName" class="form-control input-lg m-b" id="userName">
+                                </div>
+                            </div>
+                <div class="form-group">
+                   <label class="col-sm-4 control-label">Password</label>
+                                <div class="col-sm-8">
+       <input type="text" placeholder="" name="password" class="form-control input-lg m-b" id="password">
+                                </div>
+                            </div>
+                <div class="form-group">
+                   <label class="col-sm-4 control-label">Label</label>
+                                <div class="col-sm-8">
+       <input type="text" placeholder="" name="label" class="form-control input-lg m-b" id="label">
+                                </div>
+                            </div>
+                    <div class="form-group">
+                   <label class="col-sm-4 control-label">ConfirmBlockNo</label>
+                                <div class="col-sm-8">
+       <input type="text" placeholder="" name="confirmBlockNo" class="form-control input-lg m-b" id="confirmBlockNo">
+                                </div>
+                            </div> 
+                     <div class="form-group">
+                   <label class="col-sm-4 control-label">ScanStartBlockNo</label>
+                                <div class="col-sm-8">
+       <input type="text" placeholder="" name="scanStartBlockNo" class="form-control input-lg m-b" id="scanStartBlockNo">
+                                </div>
+                            </div>           
+            
+        
+          <div class="form-group">
+                                <label class="col-sm-4 control-label">Description</label>
+
+                                <div class="col-sm-8">
+                                    <input type="text" placeholder="" class="form-control input-lg m-b" name="description" id="description">
+                                   
+                                </div>
+                            </div>     
+          <div class="">
+          	<div class="col-sm-6 center-block">
+          		<button type="submit" form="addBlockChainform" class="btn btn-success center-block" id="addBlockChain">Add</button>
+          	</div>
+          	<div class="col-sm-6 center-block">
+          		<button class="btn btn-danger center-block" id="cabcelAddBtn">Cancel</button>
+          	</div>
+          </div>
+ 	</form>
+                      
+               
+                      
+                      
+ </div>
+ <div class=" hide" id="editModal">
+ 	<form id="editForm">
+ 		
+ 		<div class="form-group">
+                   <label class="col-sm-4 control-label">ChainId</label>
+
+                                <div class="col-sm-8">
+                                    <input type="text" placeholder="" class="form-control input-lg m-b" name="chainId1" id="chainId1">
+                                   
+                                </div>
+                            </div>
+ 	  <div class="form-group">
+                   <label class="col-sm-4 control-label">Chain Name</label>
+                                <div class="col-sm-8">
+       <input type="text" placeholder="" name="chainName1" class="form-control input-lg m-b" id="chainName1">
+                                </div>
+                            </div>
+        <div class="form-group">
+                   <label class="col-sm-4 control-label">URL</label>
+                                <div class="col-sm-8">
+       <input type="text" placeholder="" name="url1" class="form-control input-lg m-b" id="url1">
+                                </div>
+                            </div>
+        <div class="form-group">
+                   <label class="col-sm-4 control-label">User Name</label>
+                                <div class="col-sm-8">
+       <input type="text" placeholder="" name="userName1" class="form-control input-lg m-b" id="userName1">
+                                </div>
+                            </div>
+                <div class="form-group">
+                   <label class="col-sm-4 control-label">Password</label>
+                                <div class="col-sm-8">
+       <input type="text" placeholder="" name="password1" class="form-control input-lg m-b" id="password1">
+                                </div>
+                            </div>
+                <div class="form-group">
+                   <label class="col-sm-4 control-label">Label</label>
+                                <div class="col-sm-8">
+       <input type="text" placeholder="" name="label1" class="form-control input-lg m-b" id="label1">
+                                </div>
+                            </div>
+                    <div class="form-group">
+                   <label class="col-sm-4 control-label">ConfirmBlockNo</label>
+                                <div class="col-sm-8">
+       <input type="text" placeholder="" name="confirmBlockNo1" class="form-control input-lg m-b" id="confirmBlockNo1">
+                                </div>
+                            </div> 
+                     <div class="form-group">
+                   <label class="col-sm-4 control-label">ScanStartBlockNo</label>
+                                <div class="col-sm-8">
+       <input type="text" placeholder="" name="scanStartBlockNo1" class="form-control input-lg m-b" id="scanStartBlockNo1">
+                                </div>
+                            </div>           
+            
+        
+          <div class="form-group">
+                                <label class="col-sm-4 control-label">Description</label>
+
+                                <div class="col-sm-8">
+                                    <input type="text" placeholder="" class="form-control input-lg m-b" name="description1" id="description1">
+                                   
+                                </div>
+                            </div>     
+          <div class="">
+          	<div class="col-sm-6 center-block">
+          		<button type="submit"  class="btn btn-success center-block" id="saveBtn">Save</button>
+          	</div>
+          	<div class="col-sm-6 center-block">
+          		<button class="btn btn-danger center-block" id="cabcelAddBtn1">Cancel</button>
+          	</div>
+          </div>
+ 	</form>
+                      
+               
+                      
+                      
+ </div>
+ 
+ 
+ 
+        <!-- 全局js -->
+    <script src="js/jquery.min.js?v=2.1.4"></script>
+    <script src="js/bootstrap.min.js?v=3.3.6"></script>
+
+   <script src="js/plugins/validate/jquery.validate.min.js"></script>
+    <script src="js/plugins/bootstrap-table/bootstrap-table.min.js"></script>
+    <script src="js/plugins/bootstrap-table/bootstrap-table-mobile.min.js"></script>
+   <script src="js/plugins/layer/layer.min.js"></script>
+
+     <script src="js/custom/validate_custom.js"></script>
+    <script src="js/custom/public.js"></script>
+    <script src="js/custom/cyptoInfo/blockChainInfo.js"></script>
+</html>

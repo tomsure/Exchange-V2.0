@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title> - Bootstrap Table</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+
+    <link rel="shortcut icon" href="favicon.ico">
+    <link href="css/bootstrap.min.css?v=3.3.6" rel="stylesheet">
+    <link href="css/font-awesome.css?v=4.4.0" rel="stylesheet">
+    <link href="css/plugins/bootstrap-table/bootstrap-table.min.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/style.css?v=4.1.0" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/custom/custom.css"/>
+
+
+</head>
+
+<body class="gray-bg">
+<div class="wrapper wrapper-content animated fadeInRight">
+    <!--custom-->
+    <div class="ibox float-e-margins">
+        <div class="ibox-title">
+            <h5>Basic</h5>
+            <div class="ibox-tools">
+                <a class="collapse-link">
+                    <i class="fa fa-chevron-up"></i>
+                </a>
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                    <i class="fa fa-wrench"></i>
+                </a>
+                <ul class="dropdown-menu dropdown-user">
+                    <li><a href="#">select1</a>
+                    </li>
+                    <li><a href="#">select2</a>
+                    </li>
+                </ul>
+                <a class="close-link">
+                    <i class="fa fa-times"></i>
+                </a>
+            </div>
+        </div>
+        <div class="ibox-content">
+            <div class="row row-lg">
+
+                <div class="col-sm-12">
+                    <div class="toolbar" id="tableToolBar">
+                        <div class="pull-left col-sm-4 col-md-4 col-lg-4 col-xs-4">
+                            <button class="btn btn-danger" id="disabledBtn">Disable</button>
+                            <button class="btn btn-success" id="enabledBtn">Enable</button>
+                            <button class="btn btn-primary" id="addBtn">Add</button>
+                            <button class="btn btn-info"  id="editBtn">Edit</button>
+                        </div>
+                        <div class="pull-right col-sm-8 col-md-8 col-lg-8 col-xs-8">
+                            <button class="btn pull-right" id="searchBtn">Search</button>
+                            <input type="text" class="searchINput col-sm-2 col-md-2 col-lg-2 col-xs-2" placeholder="Coin Name" name="SearchCoinName" id="SearchCoinName" />
+                            <input type="text" placeholder="ChainId"
+                                   class="searchINput col-sm-2 col-md-2 col-lg-2 col-xs-2" name="searchChainId"  id="searchChainId" />
+    <input type="text" placeholder="Status" class="searchINput col-sm-2 col-md-2 col-lg-2 col-xs-2" id="searchStatus" name="searchStatus" />
+
+                        </div>
+                    </div>
+                    <div class="example">
+                        <table id="currencyInfoTable" data-mobile-responsive="true"
+                               style="table-layout:fixed !important;">
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--custom-->
+</div>
+ <div class="hide" id="addCryptoCurrency">
+    <form id="addCryptoCurrencyForm">
+
+        <div class="form-group">
+            <label class="col-sm-4 control-label">ID:</label>
+            <div class="col-sm-8">
+                <input type="text" placeholder="" class="form-control input-lg m-b" name="cryptId" id="cryptId">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-4 control-label">Coin Name:</label>
+            <div class="col-sm-8">
+                <input type="text" placeholder="" name="coinName" class="form-control input-lg m-b" id="coinName">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-4 control-label">Chain ID:</label>
+            <div class="col-sm-8">
+                <input type="text" placeholder="" name="chainId" class="form-control input-lg m-b" id="chainId">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-4 control-label">Withdrawal Fee:</label>
+            <div class="col-sm-8">
+                <input type="text" placeholder="" name="withdrawalFee" class="form-control input-lg m-b" id="withdrawalFee">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-sm-4 control-label">Status:</label>
+            <div class="col-sm-8">
+   <input type="text" placeholder="" name="status" class="form-control input-lg m-b" id="status">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-4 control-label">Base Coin:</label>
+            <div class="col-sm-8">
+                <input type="text" placeholder="" name="baseCoin" class="form-control input-lg m-b" id="baseCoin">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-4 control-label">Description:</label>
+            <div class="col-sm-8">
+                <input type="text" placeholder="" class="form-control input-lg m-b" name="description" id="description">
+            </div>
+        </div>
+        <div class="">
+            <div class="col-sm-6 center-block">
+                <button type="submit" form="addCryptoCurrencyForm" class="btn btn-success center-block">Add</button>
+            </div>
+            <div class="col-sm-6 center-block">
+                <button class="btn btn-danger center-block" id="cabcelAddBtn">Cancel</button>
+            </div>
+        </div>
+    </form>
+</div>
+<div class="hide" id="editCryptoCurrency">
+    <form id="editCryptoCurrencyForm">
+
+        <div class="form-group">
+            <label class="col-sm-4 control-label">ID:</label>
+            <div class="col-sm-8">
+                <input type="text" placeholder="" class="form-control input-lg m-b" name="cryptId1" id="cryptId1">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-4 control-label">Coin Name:</label>
+            <div class="col-sm-8">
+                <input type="text" placeholder="" name="coinName1" class="form-control input-lg m-b" id="coinName1">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-4 control-label">Chain ID:</label>
+            <div class="col-sm-8">
+                <input type="text" placeholder="" name="chainId1" class="form-control input-lg m-b" id="chainId1">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-4 control-label">Withdrawal Fee:</label>
+            <div class="col-sm-8">
+                <input type="text" placeholder="" name="withdrawalFee1" class="form-control input-lg m-b" id="withdrawalFee1">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-sm-4 control-label">Status:</label>
+            <div class="col-sm-8">
+                <input type="text" placeholder="" name="status1" class="form-control input-lg m-b" id="status1">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-4 control-label">Base Coin:</label>
+            <div class="col-sm-8">
+                <input type="text" placeholder="" name="baseCoin1" class="form-control input-lg m-b" id="baseCoin1">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-4 control-label">Description:</label>
+            <div class="col-sm-8">
+                <input type="text" placeholder="" class="form-control input-lg m-b" name="description1" id="description1">
+            </div>
+        </div>
+        <div class="">
+            <div class="col-sm-6 center-block">
+                <button type="submit" form="editCryptoCurrencyForm" class="btn btn-success center-block">Save</button>
+            </div>
+            <div class="col-sm-6 center-block">
+                <button class="btn btn-danger center-block" id="cabcelAddBtn1">Cancel</button>
+            </div>
+        </div>
+    </form>
+</div>
+ 
+</body>
+<!-- 全局js -->
+<script src="js/jquery.min.js?v=2.1.4"></script>
+<script src="js/bootstrap.min.js?v=3.3.6"></script>
+<script src="js/plugins/layer/layer.min.js"></script>
+<script src="js/plugins/validate/jquery.validate.min.js"></script>
+<script src="js/plugins/bootstrap-table/bootstrap-table.min.js"></script>
+<script src="js/plugins/bootstrap-table/bootstrap-table-mobile.min.js"></script>
+
+
+<script src="js/custom/public.js"></script>
+<script src="js/custom/cyptoInfo/cryptoCurrencyInfo.js"></script>
+
+
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title> - Bootstrap Table</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+
+    <link rel="shortcut icon" href="favicon.ico"> <link href="css/bootstrap.min.css?v=3.3.6" rel="stylesheet">
+    <link href="css/font-awesome.css?v=4.4.0" rel="stylesheet">
+    <link href="css/plugins/bootstrap-table/bootstrap-table.min.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/style.css?v=4.1.0" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/custom/custom.css"/>
+    
+
+</head>
+
+<body class="gray-bg">
+    <div class="wrapper wrapper-content animated fadeInRight">
+        
+        
+        
+           <!--custom-->
+           <div class="ibox float-e-margins">
+            <div class="ibox-title">
+                <h5>Basic</h5>
+                <div class="ibox-tools">
+                    <a class="collapse-link">
+                        <i class="fa fa-chevron-up"></i>
+                    </a>
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-wrench"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-user">
+                        <li><a href="#">select1</a>
+                        </li>
+                        <li><a href="#">select2</a>
+                        </li>
+                    </ul>
+                    <a class="close-link">
+                        <i class="fa fa-times"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="ibox-content">
+                <div class="row row-lg">
+                   
+
+                    <div class="col-sm-12">
+                        <div class="toolbar" id="tableToolBar">
+                        	<div class="pull-left col-sm-4 col-md-4 col-lg-4 col-xs-4">
+                        		<button class="btn btn-danger" id="disabledBtn" >Disable</button>
+                        	<button class="btn btn-success" id="enabledBtn">Enable</button> 
+                        	</div>
+                          <div class="pull-right col-sm-8 col-md-8 col-lg-8 col-xs-8">
+                          	 <button class="btn pull-right" id="searchBtn">Search</button>
+                          	<input type="text" class="searchINput col-sm-2 col-md-2 col-lg-2 col-xs-2" placeholder="User Name" id="userName" />
+                        <input type="text" placeholder="Mobile" class="searchINput col-sm-2 col-md-2 col-lg-2 col-xs-2" id="mobile"/>
+                        <input type="text" placeholder="ID No." class="searchINput col-sm-2 col-md-2 col-lg-2 col-xs-2" id="idNumber" />
+                       
+                          </div>
+                        </div>
+                        <div class="example">
+                            
+                            <table id="userDetailsTable" data-mobile-responsive="true" style="table-layout:fixed !important;" >
+                                
+                            </table>
+                        </div>
+                   </div>
+                </div>
+            </div>
+        </div>
+           <!--custom-->
+    </div>
+
+    <!-- 全局js -->
+    <script src="js/jquery.min.js?v=2.1.4"></script>
+    <script src="js/bootstrap.min.js?v=3.3.6"></script>
+
+   
+    <script src="js/plugins/bootstrap-table/bootstrap-table.min.js"></script>
+    <script src="js/plugins/bootstrap-table/bootstrap-table-mobile.min.js"></script>
+   
+
+     
+    <script src="js/custom/public.js"></script>
+    <script src="js/custom/userInfo/userDetails.js"></script>
+   
+
+</body>
+
+</html>

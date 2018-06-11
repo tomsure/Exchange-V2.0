@@ -1,0 +1,195 @@
+$(function(){
+    
+             $.ajax({
+             	type:"POST",
+             	url:"http://47.75.72.244:8080/chain/list",
+             	async:true,
+             	beforeSend: function (XMLHttpRequest) {  
+                XMLHttpRequest.setRequestHeader("Content-Type", "application/json"); 
+               },
+             	data:JSON.stringify({"chainName" : "", "status" : -1}),
+             	success:function(d){
+             		$.each(d,function(i,el){
+             			if(d[i].isKyc==1){
+             				d[i].isKyc='Yes'
+             			}else if(d[i].isKyc==0){
+             				d[i].isKyc='No'
+             			}
+             			if(d[i].isKycLocked==1){
+             				d[i].isKycLocked='Yes'
+             			}else if(d[i].isKycLocked==0){
+             				d[i].isKycLocked='No'
+             			}
+             		   d[i].lastLoginTime=timestampToTime(d[i].lastLoginTime)	
+             			
+             		})
+             		
+             		
+             		 var ableTable=$('#userDetailsTable').bootstrapTable({
+
+           	toolbar: '#tableToolBar',
+//         	queryParams: oTableInit.queryParams,
+            pagination:true,
+            pageSize:3,
+            rowStyle: function(row, index) {
+                      var style = {};
+                      style = {
+                          css: {
+                              'text-align': 'center'
+                                }
+                               };
+                      return style;
+                  },
+           	 columns: [
+           	          {
+//                        field: 'Chain Name',
+//                        title: 'Chain Name',
+                          checkbox : true,
+                          formatter:function(){
+//                        	addClass('')
+                          }
+                      },
+                      {
+                          field: 'url',
+                          title: 'URL'
+                      },
+                      {
+                          field: 'userName',     
+                          title: 'User Name'
+                      },
+                      {
+                          field: 'password',
+                          title: 'Password'
+                      },
+                      {
+                          field: 'startScanBlockId',
+                          title: 'Start Scan Black ID'
+                      },
+                      {
+                          field: 'confirmNo',
+                          title: 'Confirm No.'
+                      },
+                      {
+                          field: 'label',
+                          title: 'Label'
+                      },
+                      {
+                          field: 'descrip',
+                          title: 'Descrip'
+                      },
+                      {
+                          field: 'chainId',
+                          title: 'ChainId'
+                      },
+                      {
+                          field: 'status',
+                          title: 'Operation',
+//                        events: userEnable,
+                          formatter: operateFormatter
+                      }
+                      
+                      ],
+                 data:d,
+                 onClickCell:function(field, value, row, $element){
+                    	   if($($element.context).text()=='Enable'){
+                 	   	userEnable("http://47.75.72.244:8080/chain/enable",{"ids":[row.chainId],'status':0},function(d){
+                 	   		if(d.status==200){
+            $($element.context).find('button').removeClass('btn-success').addClass('btn-danger')
+            $($element.context).find('button').text('Disable')
+                 	   		}
+                             
+                 	   	})
+                 	   		
+                 	   }else if($($element.context).text()=='Disable'){
+                 	   	userEnable("http://47.75.72.244:8080/chain/enable",{"ids":[row.chainId],'status':1},function(d){
+                 	   		 if(d.status==200){
+            $($element.context).find('button').removeClass('btn-danger').addClass('btn-success')
+            $($element.context).find('button').text('Enable')
+                 	   		 }
+                            
+                 	   	})
+                 	  
+                 	   }
+
+
+                 },
+             		 })
+             		               $('#enabledBtn').click(function(){
+               	var result = ableTable.bootstrapTable('getSelections');
+            	     var ids = [];
+			    for (var i = 0; i < result.length; i++) {
+			        var item = result[i];
+			        ids.push(item.chainId);
+			    }
+                 var checkedBox=$('#userDetailsTable').find('tr td input[type="checkbox"]:checked')
+                 if(checkedBox.length<=0){
+                 	 alert('please check the table box')
+                 }else if(checkedBox.length>0){
+                 	userEnable("http://47.75.72.244:8080/chain/enable",{"ids":ids,"status":1},function(d){
+                   	if(d.status==200){
+                 		alert('success')
+                 		enabledFun(checkedBox)
+                    }
+                 })
+                 	}
+                })		 
+                 
+                 $('#disabledBtn').click(function(){
+                 	var result = ableTable.bootstrapTable('getSelections');
+  
+          	     var ids = [];
+			    for (var i = 0; i < result.length; i++) {
+			        var item = result[i];
+			        ids.push(item.userId);
+			    }
+                 var checkedBox=$('#userDetailsTable').find('tr td input[type="checkbox"]:checked')
+                 	if(checkedBox.length<=0){
+                 	 alert('please check the table box')
+                 }else if(checkedBox.length>0){
+                 	userEnable("http://47.75.72.244:8080/chain/enable",{"ids":ids,"status":0},function(d){
+                 		 
+                 	if(d.status==200){
+                 		alert('success')
+                 		disabledFun(checkedBox)
+                    }
+                 })
+                 	
+                 	
+                 	
+                 }
+                 	
+                 	
+                 })
+                 $('#addBtn').click(function(){
+                
+                  layer.open({
+                  	skin:['addStyle publicStyle'],
+                  	title:['Add BlockChain'],
+                  	type:1,
+                  	content:$('#addBlockBhainModal'),
+                  	area:['500px','550px'],
+                  	
+                  	yes:function(index,layero){
+                  		var addData={"chainId" : $('#chainId').val(), "chainName":$('#chainName').val(), "url" :$('#url').val(), "userName" :$('#userName').val(), "password" :$('#password').val(), "label":$("#label").val(), "confirmBlockNo" :$('#confirmBlockNo'), "scanStartBlockNo" : 10, "descrip" : "test"};
+                  		$.ajax({
+                  			type:"POST",
+                  			url:"http://47.75.72.244:8080/chain/save",
+                  			data:JSON.stringify(addData),
+                  			async:true
+                  		});
+                  		
+                  		layer.close(index)
+                  	},
+                  	success: function(layero, index){
+                       $('#addBlockBhainModal').removeClass('hide')
+                                                    }
+                  })
+                 })
+                 customValidate($('#addBlockChainform'),function(){
+                 	alert(111)
+                 })
+                }
+             });
+             
+           	  
+})

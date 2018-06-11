@@ -1,0 +1,657 @@
+var coinCount1 = 4;
+var coinCount2 = 4;
+if(document.getElementById("coinCount1") != null){
+	coinCount1 = document.getElementById("coinCount1").value;
+}
+if(document.getElementById("coinCount2") != null){
+	coinCount2 = document.getElementById("coinCount2").value;
+}
+var trade = {
+	check : 1,
+	NumVerify : function(tradeType) {
+		var coinshortName = $("#coinshortName").val();
+		if (tradeType == 0) {
+			var userCnyBalance = document.getElementById("tradebuyprice").value;
+			if (userCnyBalance == "") {
+				userCnyBalance = 0;
+			}
+			var tradebuyAmount = document.getElementById("tradebuyamount").value;
+			if (tradebuyAmount == "") {
+				tradebuyAmount = 0;
+			}
+			var tradeTurnover = util.accMul(userCnyBalance, tradebuyAmount);
+			var tradecnymoney = Number(document.getElementById("toptradecnymoney").innerHTML);
+			if (tradeTurnover > tradecnymoney) {
+				util.showerrortips("buy-errortips", language["comm.error.tips.41"]);
+				return;
+			}
+			document.getElementById("tradebuyTurnover").innerHTML = util.moneyformat(tradeTurnover, coinCount1);
+			util.hideerrortips("buy-errortips");
+		} else {
+			var usersellCnyBalance = document.getElementById("tradesellprice").value;
+			if (usersellCnyBalance == "") {
+				usersellCnyBalance = 0;
+			}
+			var tradesellAmount = document.getElementById("tradesellamount").value;
+			if (tradesellAmount == "") {
+				tradesellAmount = 0;
+			}
+			var tradeTurnover = util.accMul(usersellCnyBalance, tradesellAmount);
+			var trademtccoin = Number(document.getElementById("toptrademtccoin").innerHTML);
+			if (tradesellAmount > trademtccoin) {
+				util.showerrortips("sell-errortips", language["comm.error.tips.42"].format(coinshortName));
+				return;
+			}
+			document.getElementById("tradesellTurnover").innerHTML = util.moneyformat(tradeTurnover, coinCount1);
+			util.hideerrortips("sell-errortips");
+		}
+	},
+	search : function(begindate, enddate) {
+		var url = $("#recordType").val();
+		window.location.href = url;
+		
+	},
+	submitTradePwd : function() {
+		var tradePwd = document.getElementById("tradePwd").value;
+		if (tradePwd != "") {
+			document.getElementById("tradePwd").value = tradePwd;
+			document.getElementById("isopen").value = "false";
+		}
+		$('#tradepass').modal('hide');
+		var tradeType = document.getElementById("tradeType").value;
+		
+		if($("#limitedType").val()=="0"){
+			trade.submitTradeBtcForm(tradeType, false);
+		}else{
+			trade2.submitTradeBtcForm(tradeType, false);
+		}
+	},
+	submitTradeBtcForm : function(tradeType, flag) {
+		
+		$("#limitedType").val(0) ;
+		
+		errorele = "";
+		if (tradeType == 0) {
+			errorele = "buy-errortips";
+		} else {
+			errorele = "sell-errortips";
+		}
+		
+		var tradePassword = document.getElementById("tradePassword").value;
+		var userid = document.getElementById("userid").value;
+		var minBuyCount = document.getElementById("minBuyCount").value;
+		if(userid ==0 || userid=="0"){
+			util.layerAlert("", language["trade.error.tips.1"], 2);
+			return;
+		}
+		if (tradePassword == "false") {
+			util.layerAlert("", language["trade.error.tips.2"], 4);
+			return;
+		}
+		var isTelephoneBind = document.getElementById("isTelephoneBind").value;
+		if (isTelephoneBind == "false") {
+			util.layerAlert("", language["trade.error.tips.3"], 2);
+			return;
+		}
+		var symbol = document.getElementById("symbol").value;
+		var coinName = document.getElementById("coinshortName").value;
+
+		if (tradeType == 0) {
+			var tradeAmount = document.getElementById("tradebuyamount").value;
+			var tradeCnyPrice = document.getElementById("tradebuyprice").value;
+		} else {
+			var tradeAmount = document.getElementById("tradesellamount").value;
+			var tradeCnyPrice = document.getElementById("tradesellprice").value;
+		}
+		var limited = 0;
+		if (tradeType == 0) {
+			var tradeTurnover = tradeAmount * tradeCnyPrice;
+			if (document.getElementById("toptradecnymoney") != null && Number(document.getElementById("toptradecnymoney").innerHTML) < Number(tradeTurnover)) {
+				util.showerrortips(errorele, language["comm.error.tips.41"]);
+				return;
+			} else {
+				util.hideerrortips(errorele);
+			}
+		} else {
+			if (document.getElementById("toptrademtccoin") != null && Number(document.getElementById("toptrademtccoin").innerHTML) < Number(tradeAmount)) {
+				util.showerrortips(errorele, language["comm.error.tips.42"].format(coinName));
+				return;
+			} else {
+				util.hideerrortips(errorele);
+			}
+		}
+		var reg = new RegExp("^[0-9]+\.{0,1}[0-9]{0,8}$");
+		if (!reg.test(tradeAmount)) {
+			util.showerrortips(errorele, language["comm.error.tips.43"]);
+			return;
+		} else {
+			util.hideerrortips(errorele);
+		}
+		if (tradeAmount < minBuyCount) {
+			util.showerrortips(errorele, language["comm.error.tips.44"].format(minBuyCount, coinName));
+			return;
+		} else {
+			util.hideerrortips(errorele);
+		}
+		if (!reg.test(tradeCnyPrice)) {
+			util.showerrortips(errorele, language["comm.error.tips.45"]);
+			return;
+		} else {
+			util.hideerrortips(errorele);
+		}
+		if (tradeCnyPrice <= 0) {
+			util.showerrortips(errorele, language["trade.error.tips.4"]);
+			return;
+		} else {
+			util.hideerrortips(errorele);
+		}
+		var total = util.moneyformat(util.accMul(tradeAmount, tradeCnyPrice), coinCount1);
+		if (parseFloat(total) <= 0) {
+			util.showerrortips(errorele, language["trade.error.tips.5"]);
+			return;
+		} else {
+			util.hideerrortips(errorele);
+		}
+		var isopen = document.getElementById("isopen").value;
+		if (isopen == "true" && flag) {
+			document.getElementById("tradeType").value = tradeType;
+			$('#tradepass').modal({
+				backdrop : 'static',
+				keyboard : false,
+				show : true
+			});
+			return;
+		}
+		var tradePwd = "";
+		if (document.getElementById("tradePwd") != null) {
+			tradePwd = util.trim(document.getElementById("tradePwd").value);
+		}
+		if (tradePwd == "" && isopen == "true") {
+			util.showerrortips(errorele, language["comm.error.tips.46"]);
+			document.getElementById("isopen").value = true;
+			return;
+		} else {
+			util.hideerrortips(errorele);
+		}
+		
+		var fhasRealValidate = document.getElementById("fhasRealValidate").value;
+		if(fhasRealValidate == "" || fhasRealValidate =="false" || fhasRealValidate == false){
+			util.showerrortips(errorele, "请先提交实名认证.<a href='/user/realCertification.html'>前往实名认证</a>");
+			return;
+		}
+		
+		var url = "";
+		if (tradeType == 0) {
+			url = "/trade/buyBtcSubmit.html?random=" + Math.round(Math.random() * 100);
+		} else {
+			url = "/trade/sellBtcSubmit.html?random=" + Math.round(Math.random() * 100);
+		}
+		tradePwd = isopen == "true" ? "" : tradePwd;
+		var param = {
+			tradeAmount : tradeAmount,
+			tradeCnyPrice : tradeCnyPrice,
+			tradePwd : tradePwd,
+			symbol : symbol,
+			limited : limited
+		};
+		var btntext="";
+		var btn = "";
+		if(tradeType==0){
+			btn = document.getElementById("buybtn");
+			btntext = btn.innerHTML;
+			btn.innerHTML = language["trade.error.tips.6"];
+		}else{
+			btn = document.getElementById("sellbtn");
+			btntext = btn.innerHTML;
+			btn.innerHTML = language["trade.error.tips.7"];
+		}
+		btn.disabled = true;		
+		jQuery.post(url, param, function(data) {
+			btn.disabled = false;
+			btn.innerHTML = btntext;
+			util.showerrortips(errorele, data.msg);
+			if (data.resultCode == -2) {
+				document.getElementById("isopen").value = "true";
+			}else if(data.resultCode == 0) {
+				util.showerrortips(errorele, language["trade.error.tips.8"]);
+				if (tradeType == 0) {
+					document.getElementById("tradebuyamount").value="";
+					$("#tradebuyTurnover").html("0");
+				} else {
+					var tradeAmount = document.getElementById("tradesellamount").value="";
+					$("#tradesellTurnover").html("0");
+				}
+				window.setTimeout(function() {
+					$("#"+errorele).html("");
+				}, 200);
+			}
+		}, "json");
+	},
+	cancelEntrustBtc: function(id) {
+        util.layerConfirm(language["trade.error.tips.9"],
+        function(result) {
+    		var fhasRealValidate = document.getElementById("fhasRealValidate").value;
+    		if(fhasRealValidate == "" || fhasRealValidate =="false" || fhasRealValidate == false){
+    			util.layerAlert("", "请先提交实名认证.<a href='/user/realCertification.html'>前往实名认证</a>", 4);
+    			return;
+    		}
+            var url = "/trade/cancelEntrust.html?random=" + Math.round(100 * Math.random()),
+            param = {
+    			id : id
+    		};
+            $.post(url, param,
+            function(id) {
+                null != id && (location.reload(true), layer.close(result))
+            })
+        });
+    },
+    cancelAllEntrustBtc: function(id) {
+        util.layerConfirm(language["trade.error.tips.10"],
+                function(result) {
+		    		var fhasRealValidate = document.getElementById("fhasRealValidate").value;
+		    		if(fhasRealValidate == "" || fhasRealValidate =="false" || fhasRealValidate == false){
+		    			util.layerAlert("", "请先提交实名认证.<a href='/user/realCertification.html'>前往实名认证</a>", 4);
+		    			return;
+		    		}
+                    var url = "/trade/cancelAllEntrust.html?random=" + Math.round(100 * Math.random()),
+                    param = {
+            			id : id
+            		};
+                    $.post(url, param,
+                    function(id) {
+                        null != id && (location.reload(true), layer.close(result))
+                    })
+                });
+    },
+	antoTurnover : function(price, money, mtcNum, tradeType) {
+		if (tradeType == 0) {
+			document.getElementById("tradebuyprice").value = util.moneyformat(price, coinCount1);
+			document.getElementById("tradebuyamount").value = util.moneyformat(mtcNum, coinCount2);
+			var tradeTurnover = util.moneyformat(util.accMul(price, mtcNum), coinCount1);
+//			console.log(tradeTurnover);
+			var tradecnymoney = util.moneyformat(Number(document.getElementById("toptradecnymoney").innerHTML), coinCount1);
+			document.getElementById("tradebuyTurnover").innerHTML = util.moneyformat(tradeTurnover, coinCount1);
+			if (parseFloat(tradeTurnover) > parseFloat(tradecnymoney)) {
+				util.showerrortips("buy-errortips", language["comm.error.tips.41"]);
+				return;
+			}
+			
+			util.hideerrortips("buy-errortips");
+		} else {
+			var coinName = document.getElementById("coinshortName").value;
+			document.getElementById("tradesellprice").value = util.moneyformat(price, coinCount1);
+			document.getElementById("tradesellamount").value = util.moneyformat(mtcNum, coinCount2);
+			var tradeTurnover = util.accMul(price, mtcNum);
+			var trademtccoin = util.moneyformat(Number(document.getElementById("toptrademtccoin").innerHTML), coinCount1);
+			document.getElementById("tradesellTurnover").innerHTML = util.moneyformat(tradeTurnover, coinCount1);
+			if (parseFloat(mtcNum) > parseFloat(trademtccoin)) {
+				util.showerrortips("sell-errortips", language["comm.error.tips.42"].format(coinName));
+				return;
+			}
+			
+			util.hideerrortips("sell-errortips");
+		}
+	},
+	entrustInfoTab : function(ele) {
+		var type = ele.data().type;
+		var title = "";
+		var value = ele.data().value;;
+		if (value == 0) {
+			value = 1;
+			title = language["comm.error.tips.47"] + "&nbsp;+";
+			$("#fentrustsbody" + type).hide();
+		} else {
+			value = 0;
+			title = language["comm.error.tips.48"] + "&nbsp;-";
+			$("#fentrustsbody" + type).show();
+		}
+		ele.data().value = value;
+		ele.html(title);
+	},
+	entrustLog : function(id) {
+		var url = "/trade/entrustLog.html?random=" + Math.round(Math.random() * 100);
+		var param = {
+			id : id
+		};
+		jQuery.post(url, param, function(data) {
+			if (data != null && data.result == true) {
+				var modal = $("#entrustsdetail");
+				modal.find('.modal-title').html(data.title);
+				modal.find('.modal-body').html(data.content);
+				modal.modal('show');
+			}
+		}, "json");
+	},
+	onPortion : function(portion, tradeType) {
+		portion = util.accDiv(portion, 100);
+		if (tradeType == 0) {
+			var money = Number(document.getElementById("tradebuyprice").value);
+			var tradecnymoney = Number(document.getElementById("toptradecnymoney").innerHTML);
+			var mtcNum = util.accDiv(tradecnymoney, money);
+			mtcNum = util.accMul(mtcNum, portion);
+			var portionMoney = util.accMul(money, mtcNum);
+			this.antoTurnover(money, portionMoney, mtcNum, tradeType);
+		} else {
+			var money = Number(document.getElementById("tradesellprice").value);
+			var trademtccoin = Number(document.getElementById("toptrademtccoin").innerHTML);
+			mtcNum = util.accMul(trademtccoin, portion);
+			var portionMoney = util.accMul(money, mtcNum);
+			this.antoTurnover(money, portionMoney, mtcNum, tradeType);
+		}
+	},
+	lastprice : 0,
+	fristprice : true,
+	autoRefresh : function() {
+		var symbol = document.getElementById("symbol").value;
+		var coinshortName = $("#coinshortName").val();
+		var url = util.globalurl.market;
+		var buysellcount = 5;
+		var successcount = 3;
+		var url = url.format(symbol, buysellcount, successcount) + "&random=" + Math.round(Math.random() * 100);
+		$.get(url, function(data) {
+			$.each(data.buys, function(key, value) {
+				if (key >= buysellcount) {
+					return;
+				}
+				var buyele = $("#buy" + key);
+				if (buyele.length == 0) {
+					$(".buybox").append('<li id="buy' + key + '"  data-type="1" data-money="' + util.moneyformat(Number(value.price), coinCount1) + '" data-num="' + util.moneyformat(Number(value.amount), coinCount2) + '">' + '<span class="buy">' + '买' + (key + 1) + '</span>' + '<span>' + util.moneyformat(Number(value.price), coinCount1) + '</span>' + '<span>' + util.moneyformat(Number(value.amount), coinCount2)+ '</span>' + '</li>');
+				} else {
+					buyele.data().money = util.moneyformat(Number(value.price), coinCount1);
+					buyele.data().num = util.moneyformat(Number(value.amount), coinCount2);
+					buyele.children()[1].innerHTML = util.moneyformat(Number(value.price), coinCount1);
+					buyele.children()[2].innerHTML = util.moneyformat(Number(value.amount), coinCount2);
+					buyele.children()[3].innerHTML = util.moneyformat(Number(value.amount)*Number(value.price), coinCount1);
+				}
+			});
+			for ( var i = data.buys.length; i < buysellcount; i++) {
+				$("#buy" + i).remove();
+			}
+			$.each(data.sells, function(key, value) {
+				if (key >= buysellcount) {
+					return;
+				}
+				var sellele = $("#sell" + key);
+				if (sellele.length == 0) {
+					$(".sellbox").prepend('<li id="sell' + key + '" data-type="0" data-money="' + util.moneyformat(Number(value.price), coinCount1) + '" data-num="' + util.moneyformat(Number(value.amount), coinCount2) + '">' + '<span class="sell">' + '卖' + (key + 1) + '</span>' + '<span>' + util.moneyformat(Number(value.price), coinCount1) + '</span>' + '<span>' + util.moneyformat(Number(value.amount), coinCount2)+ '</span>' + '</li>');
+				} else {
+					sellele.data().money = util.moneyformat(Number(value.price), coinCount1);
+					sellele.data().num = util.moneyformat(Number(value.amount), coinCount2);
+					sellele.children()[1].innerHTML = util.moneyformat(Number(value.price), coinCount1);
+					sellele.children()[2].innerHTML = util.moneyformat(Number(value.amount), coinCount2);
+					sellele.children()[3].innerHTML = util.moneyformat(Number(value.amount)*Number(value.price), coinCount1);
+				}
+			});
+			for ( var i = data.sells.length; i < buysellcount; i++) {
+				$("#sell" + i).remove();
+			}
+			var loghtml = "";
+			$.each(data.trades, function(key, value) {
+				if (key >= successcount) {
+					return;
+				}
+				loghtml += '<li class="list-group-item clearfix">' + '<span class="col-xs-2 padding-clear">' + value.time + '</span>' + '<span class="col-xs-5 text-right padding-clear">' + util.moneyformat(Number(value.price), coinCount1) + '</span>' + '<span class="col-xs-5 text-right padding-clear ' + (value.en_type == 'ask' ? "greentips" : "redtips") + '">' + util.moneyformat(Number(value.amount), coinCount2) + '</span>' + '</li>';
+			});
+			$("#logbox").html("").append(loghtml);
+			if (trade.fristprice) {
+				if (data.buys.length <= 0) {
+					$("#tradesellprice").val(util.moneyformat(Number(data.p_new), coinCount1));
+				} else {
+					$("#tradesellprice").val(data.buys[0].price);
+				}
+				if (data.sells.length <= 0) {
+					$("#tradebuyprice").val(util.moneyformat(Number(data.p_new), coinCount1));
+				} else {
+					$("#tradebuyprice").val(data.sells[0].price);
+				}
+				trade.fristprice = false;
+			}
+			$(".buysellmap").on("click", function() {
+				var data = $(this).data();
+				var type = data.type;
+				var money = data.money;
+				var num = data.num;
+				var tradeAmount = "";
+				if (type == 0) {
+					tradeAmount = document.getElementById("tradebuyamount").value;
+				} else {
+					tradeAmount = document.getElementById("tradesellamount").value;
+				}
+				if (tradeAmount == "") {
+					tradeAmount = 0;
+				}
+				trade.antoTurnover(money, 0, num, type);
+			});
+
+			var p_new = util.moneyformat(Number(data.p_new), coinCount1);
+			$("#now_low").html(Number(data.low));
+			$("#now_high").html(Number(data.high));
+			$("#now_total").html(Number(data.vol));
+
+			
+			if (p_new > trade.lastprice) {
+				$("#lastprice").html(p_new+" ↑");
+                $("#lastprice").attr("class","up");
+				$("#lastprice").parent().removeClass("greentips").addClass("redtips");
+			} else if (p_new < trade.lastprice) {
+				$("#lastprice").html(p_new+" ↓");
+                $("#lastprice").attr("class","down");
+				$("#lastprice").parent().removeClass("redtips").addClass("greentips");
+			}
+			trade.lastprice = p_new;
+		}, "json");
+		url = "/real/userassets.html?random=" + Math.round(Math.random() * 100);
+		$.post(url, {
+			symbol : symbol
+		}, function(data) {
+			if (data != "") {
+				$("#toptradecnymoney").html(util.moneyformat(Number(data.availableCny), coinCount1));
+				$("#toptrademtccoin").html(util.moneyformat(Number(data.availableCoin), coinCount1));
+				$("#toptradelevercny").html(util.moneyformat(Number(data.frozenCny), coinCount1));
+				$("#toptradelevercoin").html(util.moneyformat(Number(data.frozenCoin), coinCount1));
+//				if ($("#headertotalasset").length > 0) {
+//					$("#headertotalasset").html('￥' + util.moneyformat(Number(data.leveritem.total), coinCount1));
+//				}
+//				if ($("#headerasset").length > 0) {
+//					$("#headerasset").html('￥' + util.moneyformat(Number(data.leveritem.asset), coinCount1));
+//				}
+//				if ($("#headerscore").length > 0) {
+//					$("#headerscore").html(util.moneyformat(Number(data.leveritem.score), 0));
+//				}
+//				if ($("#headercny0").length > 0) {
+//					var cnychild = $("#headercny0").children();
+//					cnychild[1].innerHTML = util.moneyformat(Number(data.cnyitem.total), coinCount1);
+//					cnychild[2].innerHTML = util.moneyformat(Number(data.cnyitem.frozen), coinCount1);
+//					/*cnychild[3].innerHTML = util.moneyformat(Number(data.cnyitem.borrow), 2);*/
+//				}
+//				if ($("#headercoin" + data.coinitem.id).length > 0) {
+//					var coinchild = $("#headercoin" + data.coinitem.id).children();
+//					coinchild[1].innerHTML = util.moneyformat(Number(data.coinitem.total, coinCount1));
+//					coinchild[2].innerHTML = util.moneyformat(Number(data.coinitem.frozen, coinCount1));
+//					/*coinchild[3].innerHTML = util.moneyformat(Number(data.coinitem.borrow, 4));*/
+//				}
+			}
+		}, "json");
+
+		var fentruststitle = $(".fentruststitle");
+		var displaytype0, displaytype1, displayvalue0, displayvalue1;
+		$.each(fentruststitle, function(index, key) {
+			key = $(key);
+			if (index == 0) {
+				displaytype0 = key.data('type');
+				displayvalue0 = key.data('value');
+			}
+			if (index == 1) {
+				displaytype1 = key.data('type');
+				displayvalue1 = key.data('value');
+			}
+		});
+		url = "/m/trade/entrustInfo.html?symbol=" + symbol + "&type=0&tradeType=0&random=" + Math.round(Math.random() * 100);
+		var hidden0 = $("#fentrustsbody0").is(":hidden") ;
+		var hidden1 = $("#fentrustsbody1").is(":hidden") ;
+		$("#entrustInfo").load(url, null, function(data) {
+			
+			
+			$(".fentruststitle").on("click", function() {
+				trade.entrustInfoTab($(this));
+			});
+			$(".tradecancel").on("click", function() {
+				var id = $(this).data().value;
+				trade.cancelEntrustBtc(id);
+			});
+			$(".allcancel").on("click", function() {
+				var id = $(this).data().value;
+				trade.cancelAllEntrustBtc(id);
+			});
+			$(".tradelook").on("click", function() {
+				var id = $(this).data().value;
+				trade.entrustLog(id);
+			});
+			
+			if(hidden0 == true ){
+				$(".fentruststitle").eq(0).click();
+			}
+			if(hidden1 == true ){
+				$(".fentruststitle").eq(1).click();
+			}
+			
+		});
+		window.setTimeout(function() {
+			trade.autoRefresh();
+		}, 3000);
+	}
+};
+
+$(function() {
+	if(document.getElementById("tradesellTurnover") != null){
+		document.getElementById("tradesellTurnover").value=0;
+	}
+	if(document.getElementById("tradebuyTurnover") != null){
+		document.getElementById("tradebuyTurnover").value=0;
+	}
+	if(document.getElementById("tradebuyamount") != null){
+		document.getElementById("tradebuyamount").value=0;
+	}
+	if(document.getElementById("tradesellamount") != null){
+		document.getElementById("tradesellamount").value=0;
+	}
+
+	$("#tradebuyprice").on("keyup", function() {
+		trade.NumVerify(0);
+	}).on("keypress", function(event) {
+		return util.VerifyKeypress(this, event, coinCount1);
+	}).on("click", function() {
+		this.focus();
+//		this.select();
+	});
+	$("#tradesellprice").on("keyup", function() {
+		trade.NumVerify(1);
+	}).on("keypress", function(event) {
+		return util.VerifyKeypress(this, event, coinCount1);
+	}).on("click", function() {
+		this.focus();
+//		this.select();
+	});
+	$("#tradebuyamount").on("keyup", function() {
+		trade.NumVerify(0);
+	}).on("keypress", function(event) {
+		return util.VerifyKeypress(this, event, coinCount2);
+	}).on("click", function() {
+		this.focus();
+//		this.select();
+	});
+	$("#tradesellamount").on("keyup", function() {
+		trade.NumVerify(1);
+	}).on("keypress", function(event) {
+		return util.VerifyKeypress(this, event, coinCount2);
+	}).on("click", function() {
+		this.focus();
+//		this.select();
+	});
+	$("#buybtn").on("click", function() {
+		trade.submitTradeBtcForm(0, true);
+	});
+	$("#sellbtn").on("click", function() {
+		trade.submitTradeBtcForm(1, true);
+	});
+	$("#modalbtn").on("click", function() {
+		trade.submitTradePwd();
+	});
+	$(".tradecancel").on("click", function() {
+		var id = $(this).data().value;
+		trade.cancelEntrustBtc(id);
+	});
+	$(".allcancel").on("click", function() {
+		var id = $(this).data().value;
+		trade.cancelAllEntrustBtc(id);
+	});
+	$(".tradelook").on("click", function() {
+		var id = $(this).data().value;
+		trade.entrustLog(id);
+	});
+	$(".buysellmap").on("click", function() {
+		var data = $(this).data();
+		var type = data.type;
+		var money = data.money;
+		var num = data.num;
+		var tradeAmount = "";
+		if (type == 0) {
+			tradeAmount = document.getElementById("tradebuyamount").value;
+		} else {
+			tradeAmount = document.getElementById("tradesellamount").value;
+		}
+		if (tradeAmount == "") {
+			tradeAmount = 0;
+		}
+		trade.antoTurnover(money, 0, num, type);
+	});
+	$(".fentruststitle").on("click", function() {
+		trade.entrustInfoTab($(this));
+	});
+	
+	$("#buyslider").on("change", function(e, val) {
+		trade.onPortion(val, 0);
+	});
+	$("#sellslider").on("change", function(e, val) {
+		trade.onPortion(val, 1);
+	});
+	
+	if(document.getElementById("tradesellTurnover") != null){
+		trade.autoRefresh();
+	}
+	
+	$('#tradepass').on('shown.bs.modal', function (e) {
+		util.callbackEnter(trade.submitTradePwd);
+	});
+	$('#tradepass').on('hidden.bs.modal', function (e) {
+		document.onkeydown=function(){};
+	});
+	$("#recordType").change(function() {
+		trade.search();
+	});
+
+});
+
+$(".databtn").click(function(){
+	if($(this).data("type")==1){
+		$("#buypricediv").show() ;
+		$("#buymarketdiv").hide() ;
+		$(this).addClass("datatime-sel") ;
+		$(this).siblings().removeClass("datatime-sel") ;
+	}else if($(this).data("type")==2){
+		$("#buypricediv").hide() ;
+		$("#buymarketdiv").show() ;
+		$(this).addClass("datatime-sel") ;
+		$(this).siblings().removeClass("datatime-sel") ;
+	}else if($(this).data("type")==3){
+		$("#sellpricediv").show() ;
+		$("#sellmarketdiv").hide() ;
+		$(this).addClass("datatime-sel") ;
+		$(this).siblings().removeClass("datatime-sel") ;
+	}else if($(this).data("type")==4){
+		$("#sellpricediv").hide() ;
+		$("#sellmarketdiv").show() ;
+		$(this).addClass("datatime-sel") ;
+		$(this).siblings().removeClass("datatime-sel") ;
+	}
+}) ;

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title> - Bootstrap Table</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+
+    <link rel="shortcut icon" href="favicon.ico"> <link href="css/bootstrap.min.css?v=3.3.6" rel="stylesheet">
+    <link href="css/font-awesome.css?v=4.4.0" rel="stylesheet">
+    <link href="css/plugins/bootstrap-table/bootstrap-table.min.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/style.css?v=4.1.0" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/custom/custom.css"/>
+    
+
+</head>
+
+<body class="gray-bg">
+    <div class="wrapper wrapper-content animated fadeInRight">
+
+           <!--custom-->
+           <div class="ibox float-e-margins">
+            <div class="ibox-title">
+                <h5>Basic</h5>
+                <div class="ibox-tools">
+                    <a class="collapse-link">
+                        <i class="fa fa-chevron-up"></i>
+                    </a>
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-wrench"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-user">
+                        <li><a href="#">select1</a>
+                        </li>
+                        <li><a href="#">select2</a>
+                        </li>
+                    </ul>
+                    <a class="close-link">
+                        <i class="fa fa-times"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="ibox-content">
+                <div class="row row-lg">
+                   
+
+                    <div class="col-sm-12">
+                        <div class="toolbar" id="tableToolBar">
+                        	<div class="pull-left col-sm-5 col-md-5 col-lg-5 col-xs-5">
+                        		<button class="btn btn-danger" id="disabledBtn" >Disabled</button>
+                        	<button class="btn btn-success" id="enabledBtn">Enabled</button> 
+                        	<button class="btn btn-primary" id="addBtn">Add</button>
+                        	<button class="btn btn-info" id="editBtn">Edit</button>
+                        	<button class="btn btn-danger" id="delBtn">Delete</button>
+                        	</div>
+                          <div class="pull-right col-sm-7 col-md-7 col-lg-7 col-xs-7">
+                          	 <button class="btn pull-right" id="searchBtn">Search</button>
+                          	<input type="text" class="searchINput col-sm-2 col-md-2 col-lg-2 col-xs-2" placeholder="User Name" id="userName" />
+                        <input type="text"  class="searchINput col-sm-2 col-md-2 col-lg-2 col-xs-2" placeholder="Status" id="status" />
+                        <input type="text" class="searchINput col-sm-2 col-md-2 col-lg-2 col-xs-2" placeholder="Role" id="role" />
+                       
+                          </div>
+                        </div>
+                        <div class="example">
+                            
+                            <table id="adminInfoTable" data-mobile-responsive="true" style="table-layout:fixed !important;" >
+                                
+                            </table>
+                        </div>
+                   </div>
+                </div>
+            </div>
+        </div>
+           <!--custom-->
+    </div>
+
+</body>
+
+<!-- 全局js -->
+<script src="js/jquery.min.js?v=2.1.4"></script>
+<script src="js/plugins/validate/jquery.validate.min.js"></script>
+<script src="js/bootstrap.min.js?v=3.3.6"></script>
+<script src="js/plugins/layer/layer.min.js"></script>
+
+<script src="js/plugins/bootstrap-table/bootstrap-table.min.js"></script>
+<script src="js/plugins/bootstrap-table/bootstrap-table-mobile.min.js"></script>
+
+
+<script src="js/custom/public.js"></script>
+<script src="js/custom/Ststem_Config/Admin_Info.js"></script>
+
+
+<div class="hide" id="addAdminInfo">
+    <form id="addAdminInfoForm">
+
+        <div class="form-group">
+            <label class="col-sm-4 control-label">ID:</label>
+            <div class="col-sm-8">
+                <input type="text" placeholder="" class="form-control input-lg m-b" name="adminId" id="adminId">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-4 control-label">Username:</label>
+            <div class="col-sm-8">
+                <input type="text" placeholder="" name="userName" class="form-control input-lg m-b" id="userName">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-4 control-label">Mobile:</label>
+            <div class="col-sm-8">
+                <input type="text" placeholder="" name="mobile" class="form-control input-lg m-b" id="mobile">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-4 control-label">Role:</label>
+            <div class="col-sm-8">
+                <input type="text" placeholder="" name="roleId" class="form-control input-lg m-b" id="roleId">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-sm-4 control-label">Status:</label>
+            <div class="col-sm-8">
+                <input type="text" placeholder="" name="status" class="form-control input-lg m-b" id="status">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-sm-4 control-label">Last Login Time:</label>
+            <div class="col-sm-8">
+                <input type="text" placeholder="" class="form-control input-lg m-b" name="lastLoginTime" id="lastLoginTime">
+            </div>
+        </div>
+
+        <div class="">
+            <div class="col-sm-6 center-block">
+                <button type="submit" form="addAdminInfoForm" class="btn btn-success center-block">Add</button>
+            </div>
+            <div class="col-sm-6 center-block">
+                <button class="btn btn-danger center-block" id="cabcelAddBtn">Cancel</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<!--//-->
+<div class="hide" id="editAdminInfo">
+    <form id="editAdminInfoForm">
+
+        <div class="form-group">
+            <label class="col-sm-4 control-label">ID:</label>
+            <div class="col-sm-8">
+                <input type="text" placeholder="" class="form-control input-lg m-b" name="adminId1" id="adminId1">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-4 control-label">Username:</label>
+            <div class="col-sm-8">
+                <input type="text" placeholder="" name="userName1" class="form-control input-lg m-b" id="userName1">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-4 control-label">Mobile:</label>
+            <div class="col-sm-8">
+                <input type="text" placeholder="" name="mobile1" class="form-control input-lg m-b" id="mobile1">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-4 control-label">Role:</label>
+            <div class="col-sm-8">
+                <input type="text" placeholder="" name="roleId1" class="form-control input-lg m-b" id="roleId1">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-sm-4 control-label">Status:</label>
+            <div class="col-sm-8">
+                <input type="text" placeholder="" name="status1" class="form-control input-lg m-b" id="status1">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-sm-4 control-label">Last Login Time:</label>
+            <div class="col-sm-8">
+                <input type="text" placeholder="" class="form-control input-lg m-b" name="lastLoginTime1" id="lastLoginTime1">
+            </div>
+        </div>
+ 
+        <div class="">
+            <div class="col-sm-6 center-block">
+                <button type="submit"  form="editAdminInfoForm" class="btn btn-success center-block">Save</button>
+            </div>
+            <div class="col-sm-6 center-block">
+                <button class="btn btn-danger center-block" id="cabcelAddBtn1">Cancel</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+</html>

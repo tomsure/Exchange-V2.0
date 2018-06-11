@@ -1,0 +1,42 @@
+buildscript{
+	repositories{
+		mavenCentral()
+	}
+	dependencies{
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:2.0.2.RELEASE")
+	}
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'org.springframework.boot'
+
+jar{
+	baseName = 'exchangeAdmin'
+	version = '0.0.1'
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories{
+	mavenCentral()
+}
+
+dependencies{
+	compile("org.springframework.boot:spring-boot-starter-web:2.0.2.RELEASE")
+	compile("org.springframework.boot:spring-boot-starter-data-jpa:2.0.2.RELEASE")
+	compile("org.springframework.boot:spring-boot-starter-data-redis:2.0.2.RELEASE")
+	compile("mysql:mysql-connector-java:8.0.11")
+	compile("com.googlecode.log4jdbc:log4jdbc:1.2")
+	compile("commons-io:commons-io:2.6")
+	compile("io.jsonwebtoken:jjwt:0.2")
+	compile("org.springframework.boot:spring-boot-starter-security:2.0.2.RELEASE")
+	compile("org.springframework.boot:spring-boot-starter-thymeleaf:2.0.2.RELEASE")
+	compile("io.springfox:springfox-swagger2:2.8.0")
+	compile("io.springfox:springfox-swagger-ui:2.8.0")
+	compile("com.google.code.gson:gson:2.8.2")
+	compile("commons-io:commons-io:2.6")
+	compile("io.jsonwebtoken:jjwt:0.2")
+	compile("javax.xml.bind:jaxb-api:2.3.0")
+}

@@ -1,0 +1,263 @@
+html,body{
+	width:100%;
+	height:100%;
+	
+}
+html{
+	font-family: "微软雅黑";
+}
+body{
+	font-family: "open sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 13px;
+    color: #676a6c;
+    /*overflow-x: hidden;*/
+	
+	
+	background-color: #e9edf0;
+	overflow: scroll;
+}
+ .th-inner {
+ 	text-align: center;
+ }
+.tableBox{
+	min-height: 222px;
+}
+
+.pageTop{
+	height: 710px;
+	margin-bottom: 5px;
+}
+.container{
+	
+	
+	background-color: #e9edf0;
+	
+}
+.coinListBox{
+	overflow: scroll;
+}
+.coinListBox,.c2cPriceBox,.tradeCoinBox{
+	background-color: white;
+	height: 100%;
+}
+
+ .boxHeader{
+	background-color: black;
+    color: white;
+    
+   
+}
+.btnBuy{
+	border: 1px solid #5bb65b;
+	color: #5bb65b;
+	background-color: white;
+}
+.btnSell{
+	border: 1px solid #f38470;
+	color: #f38470;
+	background-color: white;
+}
+ .c2cPriceBox .boxHeader,.tradeCoinBox .boxHeader{
+	 padding: 12px 0;
+}
+ .boxHeader ul{
+ 	margin-bottom: 0;
+ }
+
+.boxHeader ul li a{
+	color: white;
+	border: 0;
+	border-radius: 0;
+}
+ .boxHeader ul li:hover{
+ 	background-color: black!important;
+ }
+  .boxHeader ul li a:hover{
+  	background-color: black!important;
+  }
+.coinListBox{
+	width:6.5%;
+	min-width:82px;
+	margin-right: 4px;
+	
+}
+  .coinBackColor{
+  	background-color: #85181e;
+  	color: white;
+  	
+  }
+  
+ .coinList{
+ 	margin: auto;
+ 	text-align: center;
+ }
+  .coinList li{
+  	padding:12px 0;
+  	cursor: pointer;
+  }
+
+.c2cPriceBox{
+	width: 28.16666666666667%;
+	
+	margin-right: 4px;
+}
+.tradeCoinBox{
+	width: 63.33333333333333%;
+	margin-left: 4px;
+}
+.allOrders{
+	margin-right: 30px;
+	padding-top: 8px;
+	padding-bottom: 8px;
+}
+.pageBottom{
+	background-color: white;
+}
+.pageBottom  ul .active a,.pageBottom  ul .active a:focus{
+	 background-color: #85181e!important;
+	 color: white;
+	 border: 0;
+}
+ .boxHeader .nav-tabs li:hover{
+	background-color: black!important;
+	color: red;
+}
+/*.pageBottom  ul .active a:hover{
+	background-color: black!important;
+}*/
+.releaseButton{
+	color: white;
+	border: 1px solid #85181e;
+	padding: 3px 10px;
+	/*background: #feecd8;*/
+	 background: #f38470;
+	border-radius: 5px;
+	cursor: pointer;
+	float: right;
+    line-height: 1.5;
+   
+    display: inline-block;
+   
+    margin-right: 5px;
+    position: relative;
+    bottom: 4px;
+}
+
+.modal_tab{
+	display: none;
+}
+.modal_tab .layui-tab{
+	margin-top: 0;
+}
+.modal_tab form .form-group .form-control{
+	height: 34px;
+}
+.tradeBtn{
+	width: 200px;
+	background-color: black;
+	color: white;
+	border: 0;
+	border-radius: 4px;
+	/*margin-top: 40px;*/
+	height: 40px;
+	
+}
+.buyColor{
+	background-color:#5bb65b;
+}
+.sellColor{
+	background-color:#f38470;
+}
+
+.form-control[disabled], .form-control[readonly], fieldset[disabled] .form-control{
+	background-color: white;
+	border: 0;
+}
+.layui-tab-title{
+	text-align: center;
+	margin: 0;
+}
+.layui-tab-title li{
+	width: 50%;
+}
+
+.layui-tab-title .layui-this{
+	color: white;
+}
+
+ .layui-layer-content .layui-layer-wrap .form-group div .form-control{
+ 	margin-bottom: 25px;
+ }
+ .tradeBuyStyle .layui-layer-title{
+ 	background-color: #5bb65b;
+ 	color: white;
+ 	text-align: center;
+ 	padding-right: 30px;
+ }
+.tradeSellStyle .layui-layer-title{
+ 	background-color: #f38470;
+ 	color: white;
+ 	text-align: center;
+ 	padding-right: 30px;
+ 	
+ }
+ .btn-danger{
+ 	background-color: #f38470;
+ }
+#buyTotal,#sellTotal{
+	border-bottom: 1px solid lightgray;
+	border-radius: 0;
+}
+.btn{
+	min-width: 90px;
+}
+.modal_tab form .form-group label{
+	text-align: right;
+	margin-top: 10px;
+}
+.dropdownTabMenu{
+	width: 220px;
+	color: black;
+	background-color:#85181e;
+	text-align: center;
+	padding-left: 2px;
+	/*border-radius: 0;*/
+}
+.dropdownTabMenu li{
+	float: left;
+	border-radius: 0;
+}
+.dropDownLi:hover{
+	margin-bottom: 35px;
+}
+
+.disabledBtn{
+	background-color: gray;
+}
+.pagination{
+	/*margin: auto;*/
+}
+.fixed-table-pagination .pagination-detail, .fixed-table-pagination div.pagination{
+	margin-top: 5px;
+    margin-bottom: 0px;
+
+}
+.fixed-table-container{
+	border-bottom: 0;
+}
+.pagination>li>a:focus, .pagination>li>a:hover, .pagination>li>span:focus, .pagination>li>span:hover{
+	border-color:lightgray!important;
+	color: gray!important;
+	background-color: lightgray!important;
+}
+.pagination>li>a, .pagination>li>span{
+	color: gray;
+}
+.form-control.inputHeight{
+	height: 35px;
+}
+.infoText{
+	border: 0;
+	border-bottom: 1px solid lightgray;
+	border-radius: 0;
+}

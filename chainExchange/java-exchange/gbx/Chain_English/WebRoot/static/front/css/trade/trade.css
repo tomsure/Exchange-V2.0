@@ -1,0 +1,579 @@
+@charset "utf-8";
+
+.trade {
+	
+}
+
+.trade .trade-error {
+	height: 16px;
+	display: block;
+}
+/***************top************/
+
+/***************trade-con*************/
+.trade .trade-buysell {
+	background: #f9f9f9;
+	margin-bottom: 15px;
+}
+
+.trade .trade-buysell a {
+	line-height: 35px;
+}
+
+.trade .trade-buysell label {
+	font-weight: normal;
+}
+
+.trade .trade-amount {
+	line-height: 47px;
+	border-bottom: #f1f1f1 solid 2px;
+	font-size: 14px;
+	margin-bottom: 15px;
+}
+
+.trade .trade-inputtips {
+	position: absolute;
+	left: 0;
+	top: 0;
+	padding-left: 30px;
+	line-height: 35px;
+	color: #b5b4b4;
+	cursor: auto;
+}
+
+.trade .form-control {
+	color: #888888;
+	border-radius: 0;
+	text-align: right;
+	padding-left: 100px;
+}
+
+.trade .trade-tips {
+	height: 60px;
+	padding-left: 0;
+}
+
+.trade .buysellmap {
+	cursor: pointer;
+}
+
+.trade .buysellmap:hover {
+	background: #f9f9f9;
+}
+/************trade-depth***********/
+.trade .trade-depth {
+	line-height: 30px;
+	display: block;
+/* 	background: #fcfbfb; */
+	padding-left: 15px;
+}
+
+.trade  .list-group {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 15px;
+}
+
+.trade .first-child {
+	margin-bottom: 0;
+	border-bottom: #e6e6e6 solid 1px;
+	padding-top: 30px;
+}
+
+.trade .list-group-item {
+	padding: 0;
+	border: none;
+	background: transparent;
+	line-height: 23px;
+}
+
+.trade .panel {
+	border: #e6e6e6 solid 1px;
+}
+
+.trade .fentruststitle {
+	cursor: pointer;
+	padding-right: 12px;
+}
+
+.trade .arrow-icon-small {
+	width: 12px;
+	height: 10px;
+	display: inline-block;
+	margin-left: 5px;
+}
+
+.trade .arrow-icon-small.red {
+	background: url("../../images/trade/tradingplist1.png") no-repeat 0 0;
+}
+
+.trade .arrow-icon-small.green {
+	background: url("../../images/trade/tradingplist1.png") no-repeat -50px
+		0;
+}
+
+.trade .arrow-icon-big {
+	width: 11px;
+	height: 12px;
+	display: inline-block;
+	margin-left: 5px;
+}
+
+.trade .arrow-icon-big.red {
+	background: url("../../images/trade/tradingplist1.png") no-repeat 0
+		-40px;
+}
+
+.trade .arrow-icon-big.green {
+	background: url("../../images/trade/tradingplist1.png") no-repeat -50px
+		-40px;
+}
+
+/***********jslider*************/
+.trade .trade-bar {
+	height: 70px;
+	padding: 20px 30px 0 30px;
+	border: 1px solid #edf3f6;
+	background: #fff;
+}
+
+.trade .trade-bar .trade-barbox {
+	position: relative;
+}
+
+.trade .trade-bar .slider-points {
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.trade .trade-bar .slider {
+	height: 25px;
+	width: auto;
+	position: relative;
+	background-color: #f6f9fc;
+	border: 1px solid #eff2f4;
+	z-index: 100;
+}
+
+.slider-points .proportioncircle {
+	width: 16.66%;
+	height: 25px;
+	line-height: 25px;
+	position: absolute;
+	cursor: pointer;
+	z-index: 100;
+	text-align: center;
+	color: #8ca7c2;
+	font-size: 12px;
+	position: absolute;
+}
+
+.slider-points .proportioncircle.proportion0 {
+	left: 0;
+}
+
+.slider-points .proportioncircle.proportion1 {
+	left: 16.66%;
+}
+
+.slider-points .proportioncircle.proportion2 {
+	left: 33.22%;
+}
+
+.slider-points .proportioncircle.proportion3 {
+	left: 49.98%;
+}
+
+.slider-points .proportioncircle.proportion4 {
+	left: 66.64%;
+}
+
+.slider-points .proportioncircle.proportion5 {
+	left: 83.3%;
+}
+
+.trade .trade-bar .marker {
+	height: 40px;
+	width: 40px;
+	position: absolute;
+	top: -7px;
+	left: 0;
+	z-index: 100;
+	border-radius: 2px;
+	cursor: -webkit-grab;
+	border: 1px solid #edebeb;
+	background-color: #fff;
+}
+
+.trade .trade-bar .marker-top {
+	background: #da2e22;
+	height: 8px;
+	padding-top: 4px;
+}
+
+.trade .trade-bar .marker-top-plist {
+	background: #fff;
+	height: 1px;
+}
+
+.trade .trade-bar .marker .circle {
+	width: 40px;
+	z-index: 3;
+	cursor: pointer;
+	position: absolute;
+	top: 10px;
+	left: 0;
+	text-align: center;
+	font-size: 12px;
+	color: #da2e22;
+}
+
+.trade .trade-bar .sell-marker .circle {
+	color: #27ae60;
+}
+
+.trade .trade-bar .sell-marker .marker-top {
+	background: #27ae60;
+}
+
+
+.modal-body .text-center tbody .text-title th {
+	text-align: center !important;
+}
+
+.rightarea .rightarea-con {
+	padding-top: 0px;
+	padding-bottom: 20px;
+}
+.all_coin_info_up {
+	margin-top: 15px;
+	width: 97%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.all_coin_info {
+	background: #fcfbfb;
+	width: 100%;
+	padding: 20px 0px 60px 0px;
+	border: 1px solid #ccc;
+}
+
+.all_coin_info div {
+	height: 40px;
+	line-height: 40px;
+	float: left;
+	padding-left: 12px;
+	font-size: 16px;
+}
+
+.all_coin_info dd {
+	float: left;
+	width: 125px;
+	text-align: center;
+	font-size: 12px;
+	color: #666;
+	line-height: 22px;
+	padding-top: 6px;
+}
+
+.all_coin_info dd p {
+	line-height: 10px;
+	font-size: 18px;
+	font-family: Verdana;
+}
+
+.red {
+	color: #c32116 !important;
+}
+
+.green {
+	color: #690 !important;
+}
+
+a.openfullscreen {
+	background: url("../../images/market/marktplist.png") no-repeat scroll 0
+		-30px transparent;
+	position: absolute;
+	right: 32px;
+	top: 220px;
+	width: 15px;
+	height: 15px;
+}
+
+a.closefullscreen {
+	background: url("../../images/market/marktplist.png") no-repeat scroll 0
+		0 transparent;
+	position: fixed;
+	right: 10px;
+	top: 8px;
+	width: 15px;
+	height: 15px;
+}
+
+.fullscreen {
+	position: fixed;
+	top: 0;
+	left: 0;
+}
+
+.btn-group2 {
+	width: 110px;
+	height: 20px;
+	position: absolute;
+	right: 15px;
+	border: 1px solid #dcdcdc;
+	z-index: 80;
+}
+
+.Kline-shift-btn:first-child {
+	border-right: 1px solid #dcdcdc;
+}
+
+.Kline-shift-btn {
+	height: 100%;
+	display: inline-block;
+	line-height: 20px;
+	font-size: 12px;
+	text-align: center;
+	width: 50px;
+}
+
+.kline-back {
+	width: 22px;
+	height: 80px;
+	padding: 5px 5px 0 5px;
+	background: #3d3d3d;
+	position: absolute;
+	right: 8px;
+	top: 207px;
+	color: #fff;
+	font-size: 12px;
+	line-height: 14px;
+	text-align: center;
+	top: 207px;
+}
+
+.kline-back a {
+	text-decoration: none;
+}
+
+.table>thead>tr>th,.table>tbody>tr>th,.table>tfoot>tr>th,.table>thead>tr>td,.table>tbody>tr>td,.table>tfoot>tr>td
+	{
+	border-top: none;
+	line-height: 20px;
+}
+.now_box{height:48px;border:1px solid #e6e6e6;margin-bottom:10px;}
+.now_box .now_part{float:left;width:20%;height:100%;border-left:1px solid #e6e6e6;margin-left:-1px;text-align:center; vertical-align:middle;}
+.now_box .now_part span,.now_box .now_part b{display:inline-block;padding-top:6px}
+.now_box .now_part span{font-size:14px;color:#777;margin-right:8px}
+.now_box .now_part b{font-size:20px;}
+.now_box .now_part i{font-style:normal}
+.now_box .now_part img{height:30px;width:30px;margin-right:10px;}
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+        border-top-color: transparent;
+        border-right-color: transparent;
+        border-bottom-color: transparent;
+        border-left-color: transparent;
+    border-radius: 4px;
+}
+.label-info {
+    background-color: #5bc0de;
+}
+.label {
+    display: inline;
+    padding: .2em .6em .3em;
+    font-size: 75%;
+    font-weight: 700;
+    line-height: 1;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .25em;
+}
+/***************trade-con*************/
+.trade .trade-body {
+	background: #fff;
+	color: #999;
+}
+
+.trade .trade-body .trade-menu {
+	width: 100px;
+	height: 410px;
+	float: left;
+	margin-left: -25px;
+}
+
+.trade .trade-body .menu-items {
+	height: 375px;
+	overflow: hidden;
+}
+
+.trade .trade-body .menu-item {
+	display: block;
+	text-align: center;
+	margin-bottom: 30px;
+	text-decoration: none;
+}
+
+.trade .trade-body .menu-item .coin-logo {
+	width: 23px;
+	height: 23px;
+	display: inline-block;
+	font-size: 0;
+}
+
+.trade .trade-body .menu-item span {
+	color: #a8c0d9;
+	font-size: 12px;
+	display: block;
+	padding-top: 10px;
+}
+
+.trade .trade-body .menu-more {
+	cursor: pointer;
+	text-align: center;
+}
+
+.trade .trade-body .menu-more span {
+	display: block;
+	color: #d4d1d1;
+	font-size: 12px;
+}
+
+.trade .trade-body .menu-more span:first-child {
+	font-size: 40px;
+	height: 16px;
+	line-height: 10px;
+}
+
+.trade .trade-body .menu-item:hover span, .trade .trade-body .menu-item.active span {
+	color: #da2e22
+}
+
+.trade .trade-body .trade-area {
+/* 	width: 735px; */
+	height: 410px;
+	float: left;
+	padding: 25px 5px 0 5px;
+	background: #f6f9fc;
+}
+
+.trade .trade-body .trade-buysell {
+	width: 47.5%;
+	float: left;
+}
+
+.trade .trade-body .trade-disk {
+	width: 5%;
+	float: left;
+	height: 10px;
+}
+
+.trade .trade-buysell a {
+	line-height: 31px;
+}
+
+.trade .trade-body .trade-buysell label {
+	font-weight: normal;
+}
+
+.trade .trade-body .trade-group {
+	margin-bottom: 10px;
+	position: relative;
+}
+
+.trade .trade-body .trade-inputtips {
+	position: absolute;
+	left: 0;
+	top: 0;
+	padding-left: 30px;
+	line-height: 45px;
+	color: #b7b7b7;
+	cursor: auto;
+	font-size: 12px;
+	margin-bottom: 0;
+}
+
+.trade .trade-body .trade-input {
+	color: #333;
+	border-radius: 0;
+	text-align: right;
+	padding-left: 100px;
+	display: block;
+	width: 100%;
+	height: 45px;
+	line-height: 45px;
+	padding-right: 20px;
+	outline: none;
+	transition: all 0.3s;
+	border: 1px solid #edf3f6;
+	background: #fff;
+}
+
+.trade .trade-body .trade-input:hover, .trade .trade-body .trade-input:focus {
+	box-shadow: 0 0 2px 0 rgba(98, 135, 175, 1);
+}
+
+.trade .trade-body .trade-error {
+	height: 16px;
+	display: block;
+	position: relative;
+	top: -8px;
+}
+
+.trade .trade-body .trade-btn {
+	height: 35px;
+	line-height: 35px;
+	padding: 0;
+}
+.entruts-data {
+	padding: 15px 0;
+}
+
+.entruts-data .entruts-data-head {
+	height: 33px;
+	line-height: 33px;
+	border-bottom: 1px solid #dddddd;
+}
+
+.entruts-data .entruts-data-data {
+	min-height: 165px;
+}
+.entruts-data .entruts-data-fot{
+	height: 33px;
+	line-height: 33px;
+	text-align: center;
+}
+.entruts-data .entruts-data-data article {
+	height: 33px;
+	line-height: 33px;
+}
+
+.entruts-data span {
+	display: inline-block;
+	text-align: center;
+	float: left;
+}
+
+.entruts-data .col-1 {
+	width: 130px;
+}
+
+.entruts-data .col-2 {
+	width: 40px;
+}
+
+.entruts-data .col-3 {
+	width: 90px;
+}
+
+.entruts-data .col-4 {
+	width: 100px;
+}

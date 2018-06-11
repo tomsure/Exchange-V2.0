@@ -1,0 +1,19 @@
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: update
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+  datasource:
+    url: jdbc:log4jdbc:mysql://47.75.72.244:3306/exchange_chtest?useUnicode=true&characterEncoding=utf-8
+    username: root
+    password: 123456
+    driverClassName: net.sf.log4jdbc.DriverSpy
+  redis:
+    database: 0
+    host: 47.75.72.244
+    port: 6379
+    password: 123$abc
+    
+server:
+    port: 9090

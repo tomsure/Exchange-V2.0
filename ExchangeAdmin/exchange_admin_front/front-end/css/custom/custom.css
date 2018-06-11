@@ -1,0 +1,155 @@
+ 
+ /*public*/
+   .publicStyle .layui-layer-title{
+   	  text-align: center;
+   }
+   .publicStyle .layui-layer-content div.center-block{
+   	 text-align: center;
+   	 padding-right: 40px;
+   	 margin-top: 40px;
+   }
+   
+ /*public*/
+ 
+ 
+ .searchINput{
+	border: 0;
+	border:1px solid lightgray;
+	height: 30px;
+    border-radius: 3px;
+    position: relative;
+    top: 1px;
+    float: right;
+    margin-right: 10px;
+  
+}
+.btn{
+	height: 30px;
+	color: white;
+	margin-right: 0!important;
+	min-width: 80px;
+}
+.bars{
+	width: 100%;
+}
+.th-inner{
+	text-align: center;
+}
+table tr th,table tr td{
+	white-space: nowrap;
+}
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ body .authModal-class {
+            background: white;
+            border: none;
+            
+        }
+
+            body .authModal-class .layui-layer-content {
+                /*padding: 6rem 3rem 2rem 3rem;*/
+                 padding-top: 25px;
+                 /*padding-left: 100px;*/
+                 padding-bottom: 0px;
+                /*text-align: center;*/
+                font-size: 18px;
+               
+                height: 1px;
+            }
+
+         body .authModal-class .layui-layer-content img{
+         	width: 150px;
+         	height: 100px;
+         }
+         
+            body .authModal-class .layui-layer-btn {
+                
+                text-align: center;
+                display: flex;
+                justify-content: space-around;
+                height: 50px;
+                margin-bottom: 5px;
+                position: relative;
+                bottom: 20px;
+                
+                
+                
+            }
+            
+            body .authModal-class .layui-layer-btn a{
+            	height: 38px;
+            	width: 100px;
+            	margin-bottom: 10px;
+            	font-size: 16px;
+            	line-height: 2.4;
+            	color: white;
+            }
+
+                body .authModal-class .layui-layer-btn .layui-layer-btn0 {
+                    background: rgba(139, 195, 74, 1);
+                    border: 0px;
+                    
+                }
+
+            body .authModal-class .layui-layer-btn .layui-layer-btn1{
+                    background:rgba(229, 28, 35, 1);
+                    border: 0px;
+                    }
+           .infoContent{
+           	display: inline-block;
+           	width: 150px;
+           	/*height: 100px;*/
+           }    
+           
+           .textTitle{
+           	width: 150px;
+           	text-align: right;
+           	margin-right: 30px;
+           	font-size: 16px;
+           }
+           
+       .form-group label.control-label{
+       	text-align: right!important;
+       }         
+       .addStyle .layui-layer-btn{
+       	text-align: center;
+       }
+       .addStyle .layui-layer-btn a{
+       	border: 0;
+       	color: white;
+       	min-width: 80px;
+       	border-radius: 3px;
+       }
+     .addStyle .layui-layer-btn .layui-layer-btn0{
+     	margin-right: 50px;
+     	background-color: #27c24c;
+     }
+     .addStyle .layui-layer-btn .layui-layer-btn1{
+     	margin-left: 50px;
+     	background-color: #f05050;
+     }
+     .addStyle .layui-layer-content{
+     	padding-right: 40px;
+     }
+ 
+.navbar-header{
+	line-height: 4.5;
+}
+.navbar-header{
+	text-align: center;
+}
+.userOperate{
+	white-space: nowrap;
+}
+.form-group-lg .form-control+.form-control-feedback, .input-group-lg+.form-control-feedback, .input-lg+.form-control-feedback{
+	width: 34px;
+	height: 34px;
+	line-height: 2.5;
+	text-align:-webkit-auto;
+}

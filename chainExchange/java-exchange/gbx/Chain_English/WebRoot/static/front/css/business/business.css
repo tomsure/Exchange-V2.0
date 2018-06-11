@@ -1,0 +1,126 @@
+@CHARSET "utf-8";
+
+.section.item-1 {
+	background: url("../../images/business/select1.jpg") no-repeat 50% 50%;
+}
+
+.section.item-2 {
+	background: url("../../images/business/select2.jpg") no-repeat 50% 50%;
+}
+
+.section.item-3 {
+	background: url("../../images/business/select3.jpg") no-repeat 50% 50%;
+}
+
+.bs-table .bs-title {
+	color: #fff;
+	font-size: 48px;
+	font-weight: bold;
+	margin-bottom: 30px;
+}
+
+.bs-table .bs-title.small {
+	padding: 20px 30px;
+	border: #fff solid 2px;
+	display: inline-block;
+	position: relative;
+}
+
+.bs-table .bs-split {
+	background: #fff;
+	height: 8px;
+	width: 100px;
+	display: inline-block;
+	margin-bottom: 30px;
+}
+
+.bs-table .bs-description {
+	color: #fff;
+	font-size: 20px;
+	width: 35%;
+	display: inline-block;
+}
+
+.bs-table .bs-square {
+	width: 10px;
+	height: 10px;
+	position: absolute;
+	top: 50%;
+	margin-top: -5px;
+	background: #fff;
+}
+
+.bs-table .bs-square.left {
+	left: -6px;
+}
+
+.bs-table .bs-square.right {
+	right: -6px;
+}
+
+.bs-table .service-item .icon {
+	width: 96px;
+	height: 96px;
+	position: absolute;
+	top: -48px;
+	left: 50%;
+	margin-left: -48px;
+}
+
+.bs-table .service-item {
+	height: 275px;
+	margin-top: 75px;
+}
+
+.bs-table .service-item .icon.one {
+	background: url("../../images/business/iconplist.png") no-repeat 0 0;
+}
+
+.bs-table .service-item .icon.two {
+	background: url("../../images/business/iconplist.png") no-repeat -402px
+		0;
+}
+
+.bs-table .service-item .icon.thr {
+	background: url("../../images/business/iconplist.png") no-repeat -796px
+		0;
+}
+
+.bs-table .service-item .mark {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	opacity: .2;
+	background: #fff;
+	z-index: 10;
+}
+
+.bs-table .service-item .con {
+	position: absolute;
+	top: 100px;
+	left: 0;
+	padding: 0 30px;
+	z-index: 100;
+}
+
+.con-description {
+	color: #fff;
+	font-size: 18px;
+}
+
+.bs-table .item-bg {
+	background: url("../../images/business/select3-1.png") no-repeat;
+	width: 829px;
+	height: 399px;
+	display: inline-block;
+	padding-top:50px; 
+}
+
+.bs-table .item-bg .small {
+	border: none;
+	margin-bottom: 0;
+}
+
+.bs-table .item-bg .bs-description {
+	width: 80%;
+}

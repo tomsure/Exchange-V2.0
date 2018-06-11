@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="dist/libs/bootstrap-3.3.5/css/bootstrap.min.css"/>
+		<link rel="stylesheet" type="text/css" href="dist/icomoon/style.css"/>
+		<link rel="stylesheet" type="text/css" href="dist/layui-v2.2.5/css/layui.css"/>
+		<link rel="stylesheet" type="text/css" href="css/common.css"/>
+		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+	</head>
+	
+	<script src="/webjars/sockjs-client/sockjs.min.js"></script>
+    <script src="/webjars/stomp-websocket/stomp.min.js"></script>
+	<script src="dist/libs/jquery-2.1.4/jquery.min.js"></script>
+	  <script src="dist/layui-v2.2.5/layui.js"></script>
+	<script src="http://apps.bdimg.com/libs/jquery.cookie/1.4.1/jquery.cookie.min.js"></script>
+	<script type="text/javascript" src="dist/plugs/jquery.validate.min.js"></script>
+	<script src="dist/libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+	
+	<body>
+		<header class="header">
+			
+			<div class="topBox">
+				<span>Welcome  to  Company  Exchange  website!</span>
+				 <ul class="ulList">
+				 	<li>
+				 		<div class="dropdown">
+						<button type="button" class="btn dropdown-toggle" id="dropdownMenu1" 
+								data-toggle="dropdown">
+							Help
+		<span class="caret"></span>
+	</button>
+	<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+		<li role="presentation">
+			<a role="menuitem" tabindex="-1" href="html/guide.html">Guide</a>
+		</li>
+		<li role="presentation">
+			<a role="menuitem" tabindex="-1" href="html/faq.html">Faq</a>
+		</li>
+		<li role="presentation">
+			<a role="menuitem" tabindex="-1" href="html/fee.html">Fee</a>
+		</li>
+		<li role="presentation">
+			<a role="menuitem" tabindex="-1" href="html/security.html">Securtiy</a>
+		</li>
+		</ul>
+     </div>
+				 	</li>
+				 	<li> <a href="html/support_feedback.html"> Support </a></li>
+				 	<li id="loginLi"><a id="loginBtn" data-toggle="modal" data-target="#myModal"> Login </a> </li>
+				 	<li id="liLast"><a href="html/Register.html">  Register  </a></li>
+				 </ul>
+				
+				  
+			</div>
+			<nav class="navBox ">
+				<div class="navImageBox">
+					<img src="images/gbx-logo.png"/>
+				      
+				</div>
+				 <div class="navlist">
+				  	<ul class="">
+	<li class="active"><a href="html/home.html">Home</a></li>
+	<li><a href="html/exchange.html">OTC Trading</a></li>
+	<li><a href="html/trade.html">Token Trading</a></li>
+	<li><a href="html/product.html">Product</a></li>
+	<li class="hide" id="userItem"><a href="html/user.html">User</a></li>
+	
+</ul>
+				  </div>
+			</nav>
+		</header>
+		  <div class="slideBox fullWidth">
+		  	<div class="carousel slide" id="myCarousel" style=" ;" data-ride="carousel">
+		
+			<ol class="carousel-indicators">
+				<li data-target="#myCarousel" data-slide-to="0"></li>
+			    <li data-target="#myCarousel" data-slide-to="1"></li>
+			    <li data-target="#myCarousel" data-slide-to="2"></li>
+			</ol>
+			<div class="carousel-inner">
+				<div class="item active"><img src="images/Home/Banner.png"/></div>
+            </div>
+        </div>
+		  </div>
+		  <div class="infoBox fullWidth">
+		  	<h2><a href="html/trade.html">Quick Start On Company Exchange Guide</a></h2>
+		  	       <div><img src="images/Home/icon_01.png" alt="" /></div>
+		  	       <div><a href="html/support_feedback.html">For any questions, you may look for our Support and fill in the feedback form.  </a></div>
+		  	       <div class="InfoContent">
+		  	       	  <div class="inlineBox">
+		  	       	  	 
+		  	       	  	  <div class="circelBorder">
+		  	       	  	  	<span class="icon icon-rocket"></span>
+		  	       	  	  </div>
+		  	       	  	  <h3>Security</h3>
+		  	       	  	  <p class="text_indent">Abundant experience in digital assets security
+A super powerful DDoS attack protection system
+Multi-signature cold wallet</p>
+		  	       	  	  <button>Read More</button>
+		  	       	  </div>
+		  	       	  <div class="inlineBox">
+		  	       	  	<div class="circelBorder">
+		  	       	  	  	<span class="icon icon-equalizer2"></span>
+		  	       	  	  </div>
+		  	       	  	  <h3>Transparency</h3>
+		  	       	  	  <p class="text_indent">All trading records shown
+Trading fee calculated explicitly</p>
+		  	       	  	  <button>Read More</button>
+		  	       	  </div>
+		  	       	  <div class="inlineBox">
+		  	       	  	<div class="circelBorder">
+		  	       	  	  	<span class="icon icon-banknotes"></span>
+		  	       	  	  </div>
+		  	       	  	   <h3>Accessibilty</h3>
+		  	       	  	  <p class="text_indent">Stable system
+Quick access to market in real time</p>
+		  	       	  	  <button>Read More</button>
+		  	       	  </div>
+		  	       </div>
+		  </div>
+		  <div class="MobileLadingBox fullWidth">
+		  	<img src="images/Home/bg.png"/>
+		  </div>
+		  <div class=" transaction fullWidth">
+		  	 <h3>Transaction Information</h3>
+		  	<img src="images/Home/icon_01.png"/>
+		  	<p></p>
+		  	
+		  </div>
+		  <div class="footerImageBox fullWidth">
+		  	  <div class="imageContent"><img style="margin-top: 10%;" src="images/Home/logo_coinsilium.png" alt="" /></div>
+		  	  <div class="imageContent"><img src="images/Home/logo_enterprise.png" alt="" /></div>
+		  	  <div class="imageContent"><img style="margin-top: 5%;" src="images/Home/logo_kingandworld.png" alt="" /></div>
+		  	  <div class="imageContent"><img src="images/Home/logo_mentor.png" alt="" /></div>
+      </div>
+    <footer>
+			<div class="footer-top">
+				<div class="IconBox">
+					<img src="../images/gbx-logo.png" />
+					<p>Offical Wedsite:https://company.com/</p>
+				</div>
+				<div class="platformIntroduction">
+					<h3>Platform Introduction</h3>
+					<p>
+						<a href="">About</a>
+					</p>
+
+					<p>
+						<a href="">Legal Expla Nation</a>
+					</p>
+					<p>
+						<a href="">Registration Protocol</a>
+					</p>
+				</div>
+				<div class="faq">
+					<h3>FAQ</h3>
+					<p>
+						<a href="guide.html#aa">Registration Guide</a>
+					</p>
+
+					<p>
+						<a href="">Transation Guide</a>
+					</p>
+					<p>
+						<a href="">Recharge Guide</a>
+					</p>
+					<p>
+						<a href="">Currency Guide</a>
+					</p>
+				</div>
+				<div>
+					<h3>Download Help</h3>
+					<p>API</p>
+					<p>APP</p>
+					<p>Wallet Wodnload</p>
+					<p>Answer</p>
+				</div>
+
+			</div>
+			<div class="footer-bottom">
+				<h3>Company  ©   2018. All Rights Reserved.</h3>
+				
+				<p>All information presented on this website is for informational purposes only, and is subject to change without notice. This website is not intended to be investment advice, or an offer or solicitation for the purchase or sale of any financial instrument or product.
+				</p>
+				<p>
+					By offering information, products or services via this website, no solicitation is made by us to any person to use such information, products or services in any jurisdiction where the provision of such information, products or services may be prohibited by law.
+				</p>
+			</div>
+		</footer>
+    
+     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel" style="text-align: center;">Login</h4>
+           
+            </div>
+            <div class="modal-body">
+            	 
+				 	   
+				 	 <form id="lgPassWordForm" method="post" class="loginForm form-horizontal" action="" novalidate="novalidate">
+
+										<div class="form-group">
+                                              <label class="col-sm-3 control-label" for="lgEmail">Email</label>
+											<div class="center-block col-sm-7 ">
+												<input type="text" class="form-control" id="lgEmail" name="lgEmail" placeholder="Email" >
+											</div>
+										</div>
+										<div class="form-group">
+                                          <label class="col-sm-3 control-label" for="lgPassword">Password</label>
+											<div class="col-sm-7 ">
+												<input type="password" class="form-control" id="lgPassword" name="lgPassword" placeholder="password" >
+											</div>
+										</div>
+
+										<div class="form-group">
+
+											<div class="  setMore otherHandle">
+												<span><a href="html/password_record.html">Password Record</a></span>
+												<span><hr /></span>
+												<span><a href="html/Register.html">Register</a></span>
+											</div>
+										</div>
+
+										<div class="center-block">
+											<button type="submit" class=" submitBtn center-block" form="lgPassWordForm" id="loginButton" >Login</button>
+										</div>
+
+									</form>
+				 	 
+				 
+            </div>
+            
+        </div>
+    </div>
+</div>
+    
+	</body>
+	<script src="js/public.js"></script>
+  <script type="text/javascript" src="js/script.js"></script>
+   <script src="js/validate_custom.js"></script>
+   <script src="js/login.js"></script>
+     <script src="js/home.js"></script>
+      
+</html>

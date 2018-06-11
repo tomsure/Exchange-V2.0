@@ -1,0 +1,546 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../dist/libs/bootstrap-3.3.5/css/bootstrap.min.css"/>
+		<link rel="stylesheet" type="text/css" href="../dist/icomoon/style.css"/>
+		<link rel="stylesheet" type="text/css" href="../dist/layui-v2.2.5/css/layui.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/common.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/style.css"/>
+		
+		<script src="../dist/libs/jquery-2.1.4/jquery.min.js"></script>
+		<script src="../dist/plugs/jquery.cookie.js"></script>
+		<script src="../dist/libs/layui-v2.2.5/layui.js"></script>
+		<script src="../dist/plugs/jquery.validate.min.js"></script>
+		<script src="../dist/libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+	    <script src="/webjars/sockjs-client/sockjs.min.js"></script>
+	    <script src="/webjars/stomp-websocket/stomp.min.js"></script>
+		
+	</head>
+	<body>
+		<header class="header">
+			
+			<div class="topBox">
+				<span>Welcome  to  Company  Exchange  website!</span>
+				 <ul class="ulList">
+				 	<li>
+				 		<div class="dropdown">
+						<button type="button" class="btn dropdown-toggle" id="dropdownMenu1" 
+								data-toggle="dropdown">
+							Help
+		<span class="caret"></span>
+	</button>
+	<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+		<li role="presentation">
+			<a role="menuitem" tabindex="-1" href="guide.html">Guide</a>
+		</li>
+		<li role="presentation">
+			<a role="menuitem" tabindex="-1" href="faq.html">FAQ</a>
+		</li>
+		<li role="presentation">
+			<a role="menuitem" tabindex="-1" href="fee.html">Fee</a>
+		</li>
+		<li role="presentation">
+			<a role="menuitem" tabindex="-1" href="security.html">Securtiy</a>
+		</li>
+		</ul>
+     </div>
+				 	</li>
+				 	<li> <a href="support_feedback.html"> Support </a></li>
+				 	<li id="loginLi"><a id="loginBtn" data-toggle="modal" data-target="#myModal"> Login </a> </li>
+				 	<li id="liLast"><a href="Register.html">  Register  </a></li>
+				 </ul>
+				
+				  
+			</div>
+			<nav class="navBox ">
+				<div class="navImageBox">
+					<img src="../images/gbx-logo.png"/>
+				      
+				</div>
+				 <div class="navlist">
+				  	<ul class="">
+	<li class="active"><a href="home.html">Home</a></li>
+	<li><a href="exchange.html">OTC Trading</a></li>
+	<li><a href="trade.html">Token Trading</a></li>
+	<li><a href="product.html">Product</a></li>
+	<li class="hide" id="userItem"><a href="user.html">User</a></li>
+	
+</ul>
+				  </div>
+			</nav>
+		</header>
+		  <div class="container contentBox mianContentBox" >
+		  		<div class="panel-group verticalMenu col-lg-3 col-md-3 col-sm-3" id="accordion">
+		  			
+		  				<div class="panel ">
+		  					<div class="panel-heading">
+		  						<h4 class="panel-title">
+		  							<a data-toggle="collapse" data-parent="#accordion" 
+		  							   href="#collapseTwo">
+		  						   <span>My Assets</span>
+		  								<span><span class="icon icon-arrowsup"></span></span>
+		  							</a>
+		  							
+		  							
+		  						</h4>
+		  						
+		  					</div>
+		  					<div id="collapseTwo" class="panel-collapse collapse in">
+		  						<div class="panel-body">
+		  							<span class="icon icon-dols"></span>
+		  							<a href="my_assets.html">Account List</a>
+		  						</div>
+		  						
+		  						<div class="panel-body">
+		  							<span class="icon icon-enter"></span>
+		  							<a href="Withdrow_Address_Mgmt.html">Withdrawal Address </a>
+		  							
+		  						</div>
+		  						<div class="panel-body ">
+		  							<span class="icon icon-wallet"></span>
+		  							<a href="wallet_mgmt.html">Bank Accounts </a>
+		  						</div>
+		  					</div>
+		  				</div>
+		  				<div class="panel ">
+		  					<div class="panel-heading">
+		  						<h4 class="panel-title">
+		  							<a data-toggle="collapse" data-parent="#accordion" 
+		  							   href="#collapseThree">
+		  								<span>My Trading</span>
+		  								 <span><span class="icon icon-arrowsup"></span></span>
+		  							</a>
+		  							
+		  						</h4>
+		  						
+		  						
+		  					</div>
+		  					<div id="collapseThree" class="panel-collapse collapse  in ">
+		  						<div class="panel-body">
+		  							<span class="icon icon-order"></span>
+		  							<a href="open_order.html">Pending Order</a>
+		  						</div>
+		  						<div class="panel-body">
+		  							<span class="icon icon-chuizi"></span>
+		  							<a href="trading_history.html">Trading History</a>
+		  						</div>
+		  						
+		  					</div>
+		  				</div>
+		  			    	<div class="panel ">
+		  					<div class="panel-heading">
+		  						<h4 class="panel-title">
+		  							<a data-toggle="collapse" data-parent="#accordion" 
+		  							   href="#collapseOne">
+		  								<span>Security Center</span>
+		  							<span><span class="icon icon-arrowsup"></span></span>
+		  							</a>
+		  						</h4>
+		  						
+		  					</div>
+		  					<div id="collapseOne" class="panel-collapse collapse in ">
+		  						<div class="panel-body panel-active">
+		  							<span class="icon icon-safe"></span>
+		  							<a href="security.html">Security</a>
+		  						</div>
+		  						<div class="panel-body">
+		  							<span class="icon icon-identity"></span>
+		  							<a href="identity1.html">ldentity</a>
+		  						</div>
+		  						<div class="panel-body">
+		  							<span class="icon icon-user"></span>
+		  							<a href="operation_log.html">Operation Log</a>
+		  						</div>
+		  					</div>
+		  				</div>
+		  			    <div class="panel ">
+		  					<div class="panel-heading">
+		  						<h4 class="panel-title">
+		  							<a data-toggle="collapse" data-parent="#accordion" 
+		  							   href="#collapsefour">
+		  								<span>Support</span>
+		  								<span><span class="icon icon-arrowsup"></span></span>
+		  							</a>
+		  						</h4>
+		  							
+		  						 
+		  					</div>
+		  					<div id="collapsefour" class="panel-collapse collapse in">
+		  						<div class="panel-body">
+		  							<span class="icon icon-consult"></span>
+		  						  <a href="support_feedback.html"> Feedback</a>
+		  						</div>
+		  						<div class="panel-body">
+		  							
+		  							<span class="icon icon-list-dot-o"></span>
+		  						   <a href="list_of_issues.html">List Of Issues</a>
+		  						   
+		  						</div>
+		  					</div>
+		  				</div>
+		            </div>
+		             <!--<div class="aa" style="height: 500px;background-color:black;width: 10px;float: left;"></div>-->
+		           
+		   
+		    <div class="infoBox col-lg-9 col-md-9 col-sm-8">
+		      <div class="infoTop">Account Assets</div>
+		     	<div class="infoContent userBasicInfo">
+                   
+                     <div class="infoLeft">
+                     	<span class="icon icon-safe"></span>
+                     	 <ul>
+                     	
+                     	<li style="text-align: left;" ><span class="infoText">Email: </span><span id="userEmail"></span></li>
+                     	<li style="text-align: left;"><span class="infoText">UID: </span><span id="userId"></span></li>
+                         </ul>
+                     
+                     </div>
+		     		 <div class="textTip">
+		     		 	<p style="text-indent: 10px;">You have set up <span id="verifyNum"></span> security protection methods, remainning <span id="verifyLeftNum"></span> security protection methods to be set.</p>
+		     		 	<p>This platform protects your account and fund security in real time.</p>
+		     		 </div>
+		     	</div>
+                 <table class="userTable"  data-striped="true" data-toggle="table">
+    <thead>
+        <tr>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+     <!--   <tr>
+        	<td ><span class="moveEmail icon icon-email"></span><span class="moveEmail" >Email</span></td>
+              
+            <td id="email"></td>
+            <td><span class="icon icon-makesure"></span></td>
+            <td><button data-toggle="modal" data-target="#changeMailModal">Change</button></td>
+        </tr> --> 
+        <tr>
+        	 <td ><span class="icon  moveMobile icon-mobile"></span><span class="moveMobile">Mobile</span></td>
+           
+            <td id="mobileNumber"> </td>
+            <td><span id="mobileNumberVerified"></span></td>
+            <td><button data-toggle="modal" data-target="#changeMobileModal">Change</button></td>
+        </tr>
+         <tr>
+        	 <td class="userTitle">&nbsp;&nbsp;<span class="icon moveLogin icon-password"></span><span class="moveLogin">Login Password</span></td>
+        	<td></td>
+            <td> <span id="loginPwdVerified"></span></td>
+            <td><button data-toggle="modal" data-target="#changeLoginPasswordModal">Change</button></td>
+        </tr>
+        <tr>
+        	 <td class="userTitle"><span class="icon icon-tab-zhuanzhang"></span>Transaction Password</td>
+             <td></td>
+            <td><span id="tradpasswordVerified"></span></td>
+            <td><button data-toggle="modal" data-target="#changeTrasactionModal">Change</button></td>
+        </tr>
+        <tr>
+        	<td class="userTitle"><span class="icon moveKyc icon-addperson"></span><span class="moveKyc">KYC Authentication</span></td>
+            <td></td>
+            <td><span id="kycVerified"></span></td>
+            <td><button  id="kycAuthBtn">Change</button></td>
+        </tr>
+        <tr>
+        	 <td class="userTitle"><span class="icon moveGoole icon-google"></span>Google Authentication</td>
+            
+            <td></td>
+            <td><span id="googleAuthenticationVerified"></span></td>
+            <td><button data-toggle="modal" class="addBtn" data-target="#changeGoogleModal">Add</button></td>
+        </tr>
+    </tbody>
+</table>
+		     </div>
+		  </div>
+     <footer>
+     	<div class="footer-top">
+     		<div class="IconBox">
+     			<img src="../images/gbx-logo.png"/>
+     			<p>Offical Wedsite:https://company.com/</p>
+     		</div>
+     		<div class="platformIntroduction">
+     			<h3>Platform Introduction</h3>
+     			<p><a href="">About</a ></p>
+     			
+     			<p><a href="">Legal Expla Nation</a></p>
+     			<p><a href="">Registration Protocol</a></p>
+     		</div>
+     		<div class="faq">
+     			<h3>FAQ</h3>
+     			<p><a href="guide.html#aa">Registration Guide</a></p>
+     			
+     			<p><a href="">Transaction Guide</a></p>
+     			<p><a href="">Recharge Guide</a></p>
+     			<p><a href="">Currency Guide</a></p>
+     		</div>
+     		<div>
+     			<h3>Download Help</h3>
+     			<p>API</p>
+      			<p>APP</p>
+     			<p>Wallet Wodnload</p>
+     			<p>Answer</p>
+     		</div>
+     		
+     		
+     	</div>
+     	<div class="footer-bottom">
+     		<h3>Company  ©   2018. All Rights Reserved.</h3>
+     		
+     		<p>All information presented on this website is for informational purposes only, and is subject to change without notice. This website is not intended to be investment advice, or an offer or solicitation for the purchase or sale of any financial instrument or product. 
+     		</p>
+     		<p>
+     			By offering information, products or services via this website, no solicitation is made by us to any person to use such information, products or services in any jurisdiction where the provision of such information, products or services may be prohibited by law.
+     		</p>
+     	</div>
+     </footer>
+      
+    
+	 <!--changeMobile-->
+	   <div class="modal fade changeModal" id="changeMobileModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+					&times;
+				</button>
+				<h4 class="modal-title" id="myModalLabel">
+					Change Mobile Number
+				</h4>
+			</div>
+			<div class="modal-body">
+				<form class="form-horizontal" role="form" id="mobileForm">
+					        <div class="form-group">
+                                <label for="" class="col-sm-3 control-label"></label>
+                                <div class="col-sm-8">                        
+                                    <span>
+                                    	You are now charging the mobile number for account Email@hotmail.com
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="" class="col-sm-3 control-label">Email Addr</label>
+                                <div class="col-sm-8">
+                                     <span class="originalPhone" id="changeEmail"></span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="" class="col-sm-3 control-label">Email Code</label>
+                                <div class="col-sm-8">
+                                    <input id="emailCode" type="text"  min="4"  name="emailCode" class="form-control well" placeholder="Email Code"/>
+                                </div>
+                               
+                              <input type="button" class="sendBtn" id="emailCodeBtn" value="Send" onclick="" /> 
+                            </div>
+                            <div class="form-group">
+                                <label for="" class="col-sm-3 control-label">Phone Number</label>
+                                <div class="col-sm-8">
+                                    <input id="changedPhoneNumber" type="text"  name="phoneNumber" class="form-control well" placeholder="Phone Number"/>
+                                </div>
+                            </div>
+                             <div class="form-group">
+                                <label for="" class="col-sm-3 control-label">SMS Code1</label>
+                                <div class="col-sm-8">
+                                    <input id="changeMobileSms" type="text"  name="smsCode" class="form-control well" placeholder="SMS Code1"/>
+                                </div>
+                                 
+                                 <input type="button" class="sendBtn" id="changeMobileBtn" value="Send" /> 
+                            </div>
+                           
+                             
+                              <div class="center-block">
+                              	<button type="submit" form="mobileForm" id="changePhoneBtn" class="center-block   submitBtn" >Submit</button>
+                              </div>
+                        </form>
+			</div>
+			
+		</div>
+	</div>
+	</div>
+	<!--change Login Password-->
+       <div class="modal fade changeModal" id="changeLoginPasswordModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+					&times;
+				</button>
+				<h4 class="modal-title" id="myModalLabel">
+					Change Login Password
+				</h4>
+			</div>
+			<div class="modal-body">
+				<form class="form-horizontal" role="form" id="chlgPassWordForm">
+					       
+                            <div class="form-group">
+                                <label for="" class="col-sm-3 control-label">Old Password</label>
+                                <div class="col-sm-8">
+                                    <input type="password" id="loginOldPassword"  name="loginOldPassword" class="form-control well" placeholder="Old Password"/>
+                                    
+                                </div>
+                                
+                            </div>
+                            <div class="form-group">
+                                <label for="" class="col-sm-3 control-label">New Password</label>
+                                <div class="col-sm-8">
+                                    <input type="password" id="loginNewPassword" name="loginNewPassword" class="form-control well" placeholder="New Password"/>
+                                </div>
+                            </div>
+                             <div class="form-group">
+                                <label for="" class="col-sm-3 control-label">Confirm Password</label>
+                                <div class="col-sm-8">
+                                    <input type="password" id="loginConfirmPassword" name="loginConfirmPassword" class="form-control well" placeholder="Cofirm Password"/>
+                                </div>
+                                 
+                            </div>
+                            <div class="form-group">
+                                <label for="" class="col-sm-3 control-label">SMS Code</label>
+                                <div class="col-sm-8">
+                                    <input type="text" id="changeLoginPwdSms" name="smsAuthenticationCode" class="form-control well" placeholder="SMS Authentication Code"/>
+                                </div>
+                                <!--<span class="sendCodeBtn" id="">send</span>-->
+                                <input type="button" class="sendBtn" id="AuthenticationCodeBtn1" value="Send"  /> 
+                            </div>
+                               
+                              <div class="center-block">
+                              	<button class="center-block   submitBtn" type="submit" >Submit</button>
+                              </div>
+                        </form>
+			</div>
+			
+		</div>
+	</div>
+	</div>
+	   <!--change Trasaction Password-->
+       <div class="modal fade changeModal" id="changeTrasactionModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+					&times;
+				</button>
+				<h4 class="modal-title" id="myModalLabel">
+					Change Trasaction Password
+				</h4>
+			</div>
+			<div class="modal-body">
+				<form class="form-horizontal" role="form" id="trasactionPasswordForm" novalidate="novalidate">  
+                          <div class="form-group">
+                                <label for="" class="col-sm-3 control-label">Old Password</label>
+                                <div class="col-sm-8">
+                                    <input type="password" id="transcOldPassword" name="transcOldPassword" class="form-control well" placeholder="Old Password"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="" class="col-sm-3 control-label">New Password</label>
+                                <div class="col-sm-8">
+                                    <input type="password" id="transcNewPassword" name="transcNewPassword" class="form-control well" placeholder="New Password"/>
+                                </div>
+                            </div>
+                             <div class="form-group">
+                                <label for="" class="col-sm-3 control-label">Confirm Password</label>
+                                <div class="col-sm-8">
+                                    <input type="password" id="transcConfirmPassword" name="transcConfirmPassword" class="form-control well" placeholder="Cofirm Password"/>
+                                </div>
+                                 
+                            </div>
+                            <div class="form-group">
+                                <label for="" class="col-sm-3 control-label">SMS Code</label>
+                                <div class="col-sm-8">
+                                    <input type="text" id="changeTranscPwdSms" name="changeTranscPwdSms" class="form-control well" placeholder="SMS Authentication Code"/>
+                                </div>
+                                <!--<span class="sendCodeBtn" id="" onclick="sendSms()">send</span>-->
+                                <input type="button" class="sendBtn sendCodeBtn" id="authenticationCodeBtn" class="sendCodeBtn" value="Send"/> 
+                            </div>
+                             
+                              <div class="center-block">
+                              	<button class="center-block   submitBtn" type="submit" >Submit</button>
+                              </div>
+                        </form>
+			</div>
+			
+		</div>
+	</div>
+	</div>
+	
+	     <!--google Authentication-->
+	    <div class="modal fade changeModal" id="changeGoogleModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+					&times;
+				</button>
+				<h4 class="modal-title" id="myModalLabel">
+					Binding Google Authenticator
+				</h4>
+			</div>
+			<div class="modal-body">
+				  
+				<div class="center-block">
+                              	<button class="center-block   submitBtn">Submit</button>
+                              </div>
+			</div>
+			
+		</div>
+	</div>
+	</div>
+	 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel" style="text-align: center;">Login</h4>
+           
+            </div>
+            <div class="modal-body">
+                   <form id="lgPassWordForm" method="post" class="loginForm form-horizontal" action="" novalidate="novalidate">
+
+										<div class="form-group">
+                                              <label class="col-sm-3 control-label" for="lgEmail">Email</label>
+											<div class="center-block col-sm-7 ">
+												<input type="text" class="form-control" id="lgEmail" name="lgEmail" placeholder="Email" >
+											</div>
+										</div>
+										<div class="form-group">
+                                          <label class="col-sm-3 control-label" for="lgPassword">Password</label>
+											<div class="col-sm-7 ">
+												<input type="password" class="form-control" id="lgPassword" name="lgPassword" placeholder="Password" >
+											</div>
+										</div>
+
+										<div class="form-group">
+
+											<div class="  setMore otherHandle">
+												<span><a href="password_record.html">Password Record</a></span>
+												<span><hr /></span>
+												<span><a href="Register.html">Register</a></span>
+											</div>
+										</div>
+
+										<div class="center-block">
+											<button type="submit" class=" submitBtn center-block" form="lgPassWordForm" id="loginButton" >Login</button>
+										</div>
+
+									</form>
+				 	 
+				 
+            </div>
+            
+        </div>
+    </div>
+</div>
+	
+	</body>
+	
+  
+  <script src="../dist/plugs/bootstrap-Table/bootstrap-table.min.js"></script>
+  <script src="../js/public.js"></script>
+  <script src="../js/validate_custom.js"></script>
+  <script type="text/javascript" src="../js/script.js"></script>
+  <script src="../js/countdown.js"></script>
+   <script src="../js/user.js"></script>
+
+</html>

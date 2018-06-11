@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>基于Bootstrup的炫酷jQuery slider插件</title>
+	<link href="http://libs.baidu.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-slider.min.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <style type='text/css'>
+    	/* Space out content a bit */
+		body {
+		  /*padding-top: 20px;*/
+		  padding-bottom: 20px;
+		}
+
+		h1 small {
+			font-size: 51%;
+		}
+
+		/* Everything but the jumbotron gets side spacing for mobile first views */
+		.header,
+		.marketing,
+		.footer {
+		  padding-left: 15px;
+		  padding-right: 15px;
+		}
+/**/
+		/* Custom page header */
+		.header {
+		  border-bottom: 1px solid #e5e5e5;
+		}
+
+		/* Make the masthead heading the same height as the navigation */
+		.header h3 {
+		  margin-top: 0;
+		  margin-bottom: 0;
+		  line-height: 40px;
+		  padding-bottom: 19px;
+		}
+		.jq22-header{
+			background: #64448f; color: #fff;
+			font-family: "Segoe UI", "Lucida Grande", Helvetica, Arial, "Microsoft YaHei", FreeSans, Arimo, "Droid Sans", "wenquanyi micro hei", "Hiragino Sans GB", "Hiragino Sans GB W3", "FontAwesome", sans-serif;
+		}
+		.jq22-icon{color: #fff;}
+		.jq22-header a{text-decoration: none;}
+		/* Custom page footer */
+		.footer {
+		  padding-top: 19px;
+		  color: #777;
+		  border-top: 1px solid #e5e5e5;
+		}
+
+		/* Customize container */
+		.container {
+			min-width: 640px;
+		}
+		@media (min-width: 768px) {
+		  .container {
+		    max-width: 1000px;
+		  }
+		}
+		.container-narrow > hr {
+		  margin: 30px 0;
+		}
+
+		/* Main marketing message and sign up button */
+		.title {
+		  text-align: center;
+		  border-bottom: 1px solid #e5e5e5;
+		}
+
+		/* Responsive: Portrait tablets and up */
+		@media screen and (min-width: 768px) {
+		  /* Remove the padding we set earlier */
+		  .header,
+		  .footer {
+		    padding-left: 0;
+		    padding-right: 0;
+		  }
+		  /* Space out the masthead */
+		  .header {
+		    margin-bottom: 30px;
+		  }
+		  /* Remove the bottom border on the jumbotron for visual effect */
+		  .title {
+		    border-bottom: 0;
+		  }
+		}
+
+		.well {
+			background-color: #E0E0E0;
+		}
+
+		.slider-example {
+			padding: 10px 0;
+			margin: 35px 0;
+		}
+
+		#destroyEx5Slider {
+			margin-left: 45px;
+		}
+
+		
+    </style>
+
+   
+    
+	<!--[if lt IE 9]>
+		<script src="http://libs.baidu.com/html5shiv/3.7/html5shiv.min.js"></script>
+		<script src="http://libs.baidu.com/respond.js/1.4.2/respond.min.js"></script>
+	<![endif]-->
+</head>
+<body>
+	
+		
+		
+     
+
+      	<div class='slider-example'>
+      		
+      		
+      		
+      			<input id="ex5" type="text" data-slider-min="-5" data-slider-max="20" data-slider-step="1" data-slider-value="0"/>
+      			
+      		
+      	</div>
+
+      
+
+      
+
+      
+   
+	
+	
+	<script type='text/javascript' src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+    <script src="js/bootstrap-slider.js"></script>
+    <script type='text/javascript'>
+    	$(document).ready(function() {
+    	
+
+	        /* Example 5 */
+	        $("#ex5").slider();
+			$("#destroyEx5Slider").click(function() {
+				$("#ex5").slider('destroy');
+			});
+
+			
+    	});
+    </script>
+</body>
+</html>

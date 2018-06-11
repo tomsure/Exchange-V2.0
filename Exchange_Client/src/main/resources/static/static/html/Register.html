@@ -1,0 +1,229 @@
+﻿<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../dist/libs/bootstrap-3.3.5/css/bootstrap.min.css"/>
+		<link rel="stylesheet" type="text/css" href="../dist/icomoon/style.css"/>
+		<link rel="stylesheet" type="text/css" href="../dist/layui-v2.2.5/css/layui.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/common.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/style.css"/>
+	</head>
+	<script src="/webjars/sockjs-client/sockjs.min.js"></script>
+    <script src="/webjars/stomp-websocket/stomp.min.js"></script>
+	<script src="../dist/libs/jquery-2.1.4/jquery.min.js"></script>
+	<script src="../dist/plugs/jquery.cookie.js"></script>
+	<script src="../dist/libs/layui-v2.2.5/layui.js"></script>
+	<script src="../dist/plugs/jquery.cookie.js"></script>
+	<script src="../dist/plugs/jquery.validate.min.js"></script>
+	<script src="../dist/libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+	
+	
+	<body>
+		<header class="header">
+			
+			<div class="topBox">
+				<span>Welcome  to  Company  Exchange  website!</span>
+				 <ul class="ulList">
+				 	<li>
+				 		<div class="dropdown">
+						<button type="button" class="btn dropdown-toggle" id="dropdownMenu1" 
+								data-toggle="dropdown">
+							Help
+		<span class="caret"></span>
+	</button>
+	<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+		<li role="presentation">
+			<a role="menuitem" tabindex="-1" href="guide.html">Guide</a>
+		</li>
+		<li role="presentation">
+			<a role="menuitem" tabindex="-1" href="faq.html">FAQ</a>
+		</li>
+		<li role="presentation">
+			<a role="menuitem" tabindex="-1" href="fee.html">Fee</a>
+		</li>
+		<li role="presentation">
+			<a role="menuitem" tabindex="-1" href="security.html">Securtiy</a>
+		</li>
+		</ul>
+     </div>
+				 	</li>
+				 	<li> <a href="support_feedback.html"> Support </a></li>
+				 	<li id="loginLi"><a id="loginBtn" data-toggle="modal" data-target="#myModal"> Login </a> </li>
+				 	<li id="liLast"><a href="Register.html">  Register  </a></li>
+				 </ul>
+				
+				  
+			</div>
+			<nav class="navBox ">
+				<div class="navImageBox">
+					<img src="../images/gbx-logo.png"/>
+				      
+				</div>
+				 <div class="navlist">
+				  	<ul class="">
+	<li class="active"><a href="home.html">Home</a></li>
+	<li><a href="exchange.html">OTC Trading</a></li>
+	<li><a href="trade.html">Token Trading</a></li>
+	<li><a href="product.html">Product</a></li>
+	<li class="hide" id="userItem"><a href="user.html">User</a></li>
+	
+</ul>
+				  </div>
+			</nav>
+		</header>
+		  <div class="registerContent">
+		  	  <div class="registerBox">
+		  	  	 <div class="registerTitle boxHeader">
+		  	  	 	Register
+		  	  	 </div>
+		  	  	 
+		  	  	 <div class="panel-body">
+<form id="regForm" method="post" class="form-horizontal" action="" >
+
+
+<div class="form-group">
+<label class="col-sm-3 control-label" for="email1">Email</label>
+<div class="col-sm-6">
+<input type="text" class="form-control well" id="email1" name="email1" placeholder="Email">
+</div>
+</div>
+<div class="form-group">
+<label class="col-sm-3 control-label" for="emailVerificationCode">Email  Code</label>
+<div class="col-sm-6">
+<input type="text" class="form-control well" id="emailVerificationCode" name="emailVerificationCode" placeholder="Email Verification Code">
+ 
+</div>
+    <input type="button" style="position: relative;right: 7%;"  class="sendBtn" id="emailCodeBtn" value="Send" onclick="" autocomplete="new-password">
+</div>
+<div class="form-group">
+<label class="col-sm-3 control-label" for="verificationCode">Verification Code</label>
+<div class="col-sm-6">
+<input type="text" class="form-control well" id="verificationCode" name="verificationCode" placeholder="Verification Code">
+ 
+                                	
+                                	<!--<img  class="imgCode" id="regImg" src="/register/getVerificationCode">-->
+                                </div>
+                                <img  class="imgCode" id="regImg" src="/register/getVerificationCode">
+
+
+</div>
+<div class="form-group ">
+<label class="col-sm-3 control-label" for="password1">Password</label>
+<div class="col-sm-6">
+<input type="password" class="form-control well" id="password1" name="password1" placeholder="Password">
+</div>
+</div>
+<div class="form-group ">
+<label class="col-sm-3 control-label" for="confirm_password1">Confirm Password</label>
+<div class="col-sm-6">
+<input type="password" class="form-control well" id="confirm_password1" name="confirm_password1" placeholder="Confirm Password">
+</div>
+</div>
+
+<div class="form-group center-block">
+	   
+
+<button type="submit" class="btn  submitBtn  center-block" name="signup1" value="Sign up" style="width: 35%;">Submit</button>
+
+</div>
+</form>
+</div> 
+		  	  </div>
+		  </div>
+
+     <footer>
+     	 
+     	
+     	
+     	<div class="footer-top">
+     		<div class="IconBox">
+     			<img src="../images/gbx-logo.png"/>
+     			<p>Offical Wedsite:https://company.com/</p>
+     		</div>
+     		
+     		<div class="faq">
+     			<h3>FAQ</h3>
+     			<p><a href="faq.html">Basic knowledge</a></p>
+     			
+     			<p><a href="faq.html">Register&Login</a></p>
+     			<p><a href="faq.html">Trade</a></p>
+     			<p><a href="faq.html">Deposit&Withdrawal</a></p>
+     			<p><a href="faq.html">Wallet</a></p>
+     		</div>
+     		<div>
+     			<h3>Guide</h3>
+     			<p><a href="guide.html">KYC authentication</a></p>
+      			<p><a href="guide.html">Register&Login</a></p>
+     			<p><a href="guide.html">Security settings</a></p>
+     			<p><a href="guide.html">Deposit&Withdrawal</a></p>
+     			<p><a href="guide.html">Trade</a></p>
+     			<p><a href="guide.html">Wallet</a></p>
+     		</div>
+     		
+     		
+     	</div>
+     	<div class="footer-bottom">
+     		<h3>Company  ©   2018. All Rights Reserved.</h3>
+     		
+     		<p>All information presented on this website is for informational purposes only, and is subject to change without notice. This website is not intended to be investment advice, or an offer or solicitation for the purchase or sale of any financial instrument or product. 
+     		</p>
+     		<p>
+     			By offering information, products or services via this website, no solicitation is made by us to any person to use such information, products or services in any jurisdiction where the provision of such information, products or services may be prohibited by law.
+     		</p>
+     	</div>
+     </footer>
+     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel" style="text-align: center;">Login</h4>
+           
+            </div>
+            <div class="modal-body">
+            	 
+				 	   
+				 	 <form id="lgPassWordForm" method="post" class="loginForm form-horizontal" action="" novalidate="novalidate">
+
+										<div class="form-group">
+                                              <label class="col-sm-3 control-label" for="lgEmail">Email</label>
+											<div class="center-block col-sm-7 ">
+												<input type="text" class="form-control" id="lgEmail" name="lgEmail" placeholder="Email" >
+											</div>
+										</div>
+										<div class="form-group">
+                                          <label class="col-sm-3 control-label" for="lgPassword">Password</label>
+											<div class="col-sm-7 ">
+												<input type="password" class="form-control" id="lgPassword" name="lgPassword" placeholder="Password" >
+											</div>
+										</div>
+
+										<div class="form-group">
+
+											<div class="  setMore otherHandle">
+												<span><a href="password_record.html">Password Record</a></span>
+												<span><hr /></span>
+												<span><a href="Register.html">Register</a></span>
+											</div>
+										</div>
+
+										<div class="center-block">
+											<button type="submit" class=" submitBtn center-block" form="lgPassWordForm" id="loginButton" >Login</button>
+										</div>
+
+									</form>
+				 	 
+				 
+            </div>
+            
+        </div>
+    </div>
+</div>
+	</body>
+	<script src="../js/countdown.js"></script>
+	<script src="../js/public.js"></script>
+  <script type="text/javascript" src="../js/script.js"></script>
+  <script src="../js/validate_custom.js"></script>
+  <script src="../js/register.js"></script>
+  
+</html>

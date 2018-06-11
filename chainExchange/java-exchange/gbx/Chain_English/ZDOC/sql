@@ -1,0 +1,12 @@
+INSERT INTO `fsystemargs` VALUES ('15116', 'appbigImage1', '/static/front/app/images/banner1.png', 'APP banner', '1');
+INSERT INTO `fsystemargs` VALUES ('15117', 'appbigImage2', '/static/front/app/images/banner2.png', 'APP banner', '1');
+INSERT INTO `fsystemargs` VALUES ('15118', 'appbigImage3', '/static/front/app/images/banner3.png', 'APP banner', '1');
+INSERT INTO `fsystemargs` VALUES ('15119', 'appbigImage4', '/static/front/app/images/banner4.png', 'APP banner', '1');
+INSERT INTO `fsystemargs` VALUES ('15120', 'appbigImage5', '/static/front/app/images/banner5.png', 'APP banner', '1');
+INSERT INTO `fsystemargs` VALUES ('15121', 'appbigImage6', '/static/front/app/images/banner6.png', 'APP banner', '1');
+INSERT INTO `fsystemargs` VALUES ('15122', 'appbigImageURL1', '#', 'APP banner url', '1');
+INSERT INTO `fsystemargs` VALUES ('15123', 'appbigImageURL2', '#', 'APP banner url', '1');
+INSERT INTO `fsystemargs` VALUES ('15124', 'appbigImageURL3', '#', 'APP banner url', '1');
+INSERT INTO `fsystemargs` VALUES ('15125', 'appbigImageURL4', '#', 'APP banner url', '1');
+INSERT INTO `fsystemargs` VALUES ('15126', 'appbigImageURL5', '#', 'APP banner url', '1');
+INSERT INTO `fsystemargs` VALUES ('15127', 'appbigImageURL6', '#', 'APP banner url', '1');

@@ -1,0 +1,565 @@
+html{
+	
+}
+  *{
+  		font-family:Lato,Helvetica,Arial,sans-serif;
+  }
+  
+
+  a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, body, canvas, caption, center, cite, code, dd, del, details, dfn, div, dl, dt, em, embed, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, html, i, iframe, img, ins, kbd, label, legend, li, mark, menu, nav, object, ol, output, p, pre, q, ruby, s, samp, section, small, span, strike, strong, sub, summary, sup, table, tbody, td, tfoot, th, thead, time, tr, tt, u, ul, var, video{
+  	/*font-family: inherit;*/
+  	 font-family: shruti;
+  
+  }
+
+
+
+   /*common  /*#85181e*/
+    /*nav header /*#85181e;*/
+html,body{height:100%;
+}
+body{
+	background-color: #e8edf0;
+	min-width: 1550px
+}
+  .form-control{
+  	border: 1px solid #85181e;
+  }
+.header{
+	position: fixed;
+    z-index: 1000000;
+    top: 0;
+    width: 100%;
+	/*/*height: 150px;*/ /*20180429*/
+	margin-bottom: 10px;
+}
+.dropdown{
+	background-color: #85181e;
+	bottom: 1px;
+}
+.dropdown button{
+	background-color: #85181e;
+	color:white!important;
+	padding: 0;
+	/*font-size: 16px;*/
+	font-size: 14px;
+}   
+.dropdown-menu{
+	/*display: block;*/
+	background-color: #85181e;
+}
+.topBox{
+	/*height: 50px;*/
+	height:34px;
+	
+	background-color: #85181e;
+}
+.navContent{
+	height: 100px;
+}
+a{
+	color: gray;
+}
+ul,li{
+	list-style: none;
+}
+a:link{
+	text-decoration:none;
+	color: grey;
+}
+
+nav{
+	background-color: #ffffff;
+}
+
+.fullWidth{
+	width: 100%;
+	background-color: white;
+}
+select{
+	outline: none;
+}
+sup{
+	top: -0.3rem;
+}
+
+/*鎶樺彔鑿滃崟*/
+.panel-body a:link{
+	 color: gray;
+}
+
+.panel-body a{
+	cursor: pointer;
+	text-decoration: none;
+}
+
+.panel-group .panel-heading h4 a span{
+	 
+}
+
+html{
+			min-width: 1250px;
+		}
+		.loginBox{
+		
+			text-align: center;
+			background-color: white;
+			
+			
+		}
+		.modal-header{
+		border-bottom:	2px solid #85181e;
+		}
+		.loginBox h3{
+			background-color: white;
+			border-bottom:2px solid #52b4b7;
+			color: #52b4b7;
+			margin-top: 0;
+			margin-bottom: 0;
+			padding: 13px 0px;
+		}
+		.loginBox input{
+			color: gray;
+			display: block;
+			margin: 0 auto;
+			width: 80%;
+			border: 1px solid lightgray;
+			margin-top: 35px;
+			height: 45px;
+			font-size: 18px;
+			border-radius: 5px;
+		}
+		.loginBox input[type='submit'],.loginBox button{
+		  
+		  border: 0;	
+		  background-color: #ff9d3a;
+		  border-radius: 5px;
+		  width: 80%;
+		  height: 45px;
+		  margin: 30px auto;
+		  color: white;
+		  
+		  font-size: 18px;
+		}
+		.loginBox hr{
+			display: inline-block;
+			width: 1px ;
+			height: 10px;
+			background-color: #52b2cb;
+			margin: 0;
+			padding: 0;
+		}
+		.loginBox span a{
+			color: #52b2cb;
+		}
+		
+		#loginBtn{
+			cursor: pointer;
+			text-decoration: none;
+		}
+	.boxHeader{
+		height: 40px;
+		border-bottom:2px solid #85181e!important;
+		
+	}	
+	.dealBox div .boxHeader{
+		font-size: 18px;
+		text-align: center;
+		line-height: 2;
+		color: #50b5c9;
+	}
+.grayBorder{
+	border: 1px solid #84898d;
+}
+/*modal style*/
+
+ .releaseBox ul{
+ 	width: 50%;
+ 	margin: 0 auto;
+ }
+ .releaseBox ul li{
+ 	width: 50%;
+ }
+
+ .dealPane{
+ 	text-align: center;
+ 	padding: 10px 10%
+ 	
+ }
+ .dealPane .textBox{
+ 	width: 60%;
+ 	margin: 20px auto;
+ 	border: 1px solid lightgray;
+    border-radius: 5px;
+ }
+ .dealPane .textBox input,.dealPane .textBox button{
+ 	width:100% ;
+ 	height: 35px;
+ 	border: 0;
+ }
+ .totalBox{
+ 	width: 100%!important;
+ 	border: 0!important;
+ }
+ .textBox button{
+ 	border: 0;
+ 	color: white;
+ 	
+ }
+ .buyColor{
+ 	
+ 	background-color: limegreen;
+ }
+ .sellColor{
+ 	background-color: lightgray;
+ }
+ .dealTotal{
+  	border: 1px solid lightgray;
+  	width: 60%;
+  	margin: 0 auto;
+  	text-align: left;
+  	height: 35px;
+  	line-height: 2.5;
+ }
+.modalBodyContent{
+	text-align: center;
+}
+
+.buttonColor{
+	background-color:#85181e ;
+	color: white;
+}
+
+.th-inner{
+	text-align: center;
+}
+.bootstrap-table .table{
+	border: 0!important;
+}
+
+ table tbody tr td {
+ 	white-space: nowrap;
+ }
+.modal-header{
+	background-color: #85181e;
+	color: white;
+	font-size: 18px;
+	padding: 5px;
+	border-top-left-radius: 6px;
+	border-top-right-radius: 6px;
+	
+	
+}
+  .modal-body{
+  	min-height: 150px;
+  	
+  }
+ .modal h4:hover{
+ 	color: white;
+ }
+.modal-header h4{
+	text-align: center;
+}
+.modal-footer{
+	padding: 5px;
+}
+.modal-footer .btn-warning{
+	background-color: #85181e;
+	border-color: #85181e;
+}
+.modal-dialog {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 3;
+    margin: auto; 
+    -webkit-transform: translate(-50%, -50%) !important;
+    -moz-transform: translate(-50%, -50%) !important;
+    -ms-transform: translate(-50%, -50%) !important;
+    -o-transform: translate(-50%, -50%) !important;
+    transform: translate(-50%, -50%) !important;
+}
+.col-sm-2.control-label{
+	color: gray!important;
+}
+.btn:focus,.btn:active:focus,.btn.active:focus,.btn.focus,.btn:active.focus,.btn.active.focus {    outline: none;    border-color: transparent;    box-shadow:none;}
+
+/*//trade*/
+ .nav .open>a, .nav .open>a:focus, .nav .open>a:hover{
+ 	border-color: lightgray;
+ }
+ input[type=range] {   
+  -webkit-appearance: none; /* 闅愯棌婊戝潡锛屼互渚胯嚜瀹氫箟婊戝潡鏍峰紡 */  
+  width: 100%; /* Firefox涓嬫墍闇� */  
+}   
+    
+input[type=range]::-webkit-slider-thumb {   
+  -webkit-appearance: none;   
+}   
+    
+input[type=range]:focus {   
+  outline: none; /* 鍘绘帀榛樿钃濊壊杈规 */  
+}   
+    
+input[type=range]::-ms-track {   
+  width: 100%;   
+  cursor: pointer;   
+  background: transparent; /* 闅愯棌婊戝潡锛屼互渚胯嚜瀹氫箟婊戝潡鏍峰紡 */  
+  border-color: transparent;   
+  color: transparent;   
+}  
+input[type=range]::-webkit-slider-thumb {   
+  -webkit-appearance: none;   
+  border: 1px solid #000000;   
+  height: 10px;   
+  position:relative;top: 10px;
+  width: 16px;   
+  border-radius: 3px;   
+  background: #ffffff;   
+  cursor: pointer;   
+  margin-top: -14px; /* 鍦–hrome涓嬩綘闇�瑕佸畾涔変竴涓猰argin鍊�, 浣嗗湪Firefox鍜孖E涓嬶紝鏄嚜鍔ㄧ殑 */  
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d; /* 涓烘粦鍧楀鍔犱竴涓叿鐐殑鐗规晥 */  
+}   
+    
+/* Firefox涓� */  
+input[type=range]::-moz-range-thumb {   
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;   
+  border: 1px solid #000000;   
+  height: 10px;   
+  tab-size: 10px;
+  width: 16px;   
+  border-radius: 3px;   
+  background: #ffffff;   
+  cursor: pointer;   
+}   
+    
+/* IE涓� */  
+input[type=range]::-ms-thumb {   
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;   
+  border: 1px solid #000000;   
+  height: 10px;   
+  position:relative;top: 10px;
+  width: 16px;   
+  border-radius: 3px;   
+  background: #ffffff;   
+  cursor: pointer;   
+}  
+input[type=range]::-webkit-slider-runnable-track {   
+  width: 100%;   
+  height: 3px;   
+  cursor: pointer;   
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;   
+  background: lightgray;   
+  border-radius: 1.3px;   
+  border: 0.2px solid #010101;   
+}   
+    
+input[type=range]:focus::-webkit-slider-runnable-track {   
+  background: lightgray;   
+}   
+    
+input[type=range]::-moz-range-track {   
+  width: 100%;   
+  height: 3px;   
+  cursor: pointer;   
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;   
+  background: lightgray;   
+  border-radius: 1.3px;   
+  border: 0.2px solid #010101;   
+}   
+    
+input[type=range]::-ms-track {   
+  width: 100%;   
+  height: 3px;   
+  cursor: pointer;   
+  background: transparent;   
+  border-color: transparent;   
+  border-width: 16px 0;   
+  color: transparent;   
+}   
+input[type=range]::-ms-fill-lower {   
+  background: #2a6495;   
+  border: 0.2px solid #010101;   
+  border-radius: 2.6px;   
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;   
+}   
+input[type=range]:focus::-ms-fill-lower {   
+  background: lightgray;   
+}   
+input[type=range]::-ms-fill-upper {   
+  background: lightgray;   
+  border: 0.2px solid #010101;   
+  border-radius: 2.6px;   
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;   
+}   
+input[type=range]:focus::-ms-fill-upper {   
+  background: lightgray;   
+}  
+input[type=range] {   
+  -webkit-appearance: none;   
+  margin: 18px 0;   
+  width: 100%;   
+}   
+input[type=range]:focus {   
+  outline: none;   
+}   
+input[type=range]::-webkit-slider-runnable-track {   
+  width: 100%;   
+  height: 3px;   
+  cursor: pointer;   
+  animate: 0.2s;   
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;   
+  background: lightgray;   
+  border-radius: 1.3px;   
+  border: 0.2px solid #010101;   
+}   
+input[type=range]::-webkit-slider-thumb {   
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;   
+  border: 1px solid #000000;   
+  height: 10px;   
+  position:relative;top: 10px;
+  width: 16px;   
+  border-radius: 3px;   
+  background: #ffffff;   
+  cursor: pointer;   
+  -webkit-appearance: none;   
+  margin-top: -14px;   
+}   
+input[type=range]:focus::-webkit-slider-runnable-track {   
+  background: lightgray;   
+}   
+input[type=range]::-moz-range-track {   
+  width: 100%;   
+  height: 3px;   
+  cursor: pointer;   
+  animate: 0.2s;   
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;   
+  background: lightgray;   
+  border-radius: 1.3px;   
+  border: 0.2px solid #010101;   
+}   
+input[type=range]::-moz-range-thumb {   
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;   
+  border: 1px solid #000000;   
+  height: 16px;   
+  position:relative;top: 10px;
+  width: 16px;   
+  border-radius: 3px;   
+  background: #ffffff;   
+  cursor: pointer;   
+}   
+input[type=range]::-ms-track {   
+  width: 100%;   
+  height: 3px;   
+  cursor: pointer;   
+  animate: 0.2s;   
+  background: transparent;   
+  border-color: transparent;   
+  border-width: 16px 0;   
+  color: transparent;   
+}   
+input[type=range]::-ms-fill-lower {   
+  background: #2a6495;   
+  border: 0.2px solid #010101;   
+  border-radius: 2.6px;   
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;   
+}   
+input[type=range]::-ms-fill-upper {   
+  background: lightgray;   
+  border: 0.2px solid #010101;   
+  border-radius: 2.6px;   
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;   
+}   
+input[type=range]::-ms-thumb {   
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;   
+  border: 1px solid #000000;   
+  height: 16px;   
+  width: 16px;   
+  border-radius: 3px;   
+  background: #ffffff;   
+  cursor: pointer;   
+}   
+input[type=range]:focus::-ms-fill-lower {   
+  background: lightgray;   
+}   
+input[type=range]:focus::-ms-fill-upper {   
+  background: lightgray;   
+  }
+  
+input:focus { outline: none!important; }
+
+.loginBox form label{
+	color: red;
+}
+
+label.error{
+	color: red;
+}
+.cancelBtn{
+	width: 90px;
+}
+.fixed-table-loading{
+	display: none;
+}
+
+.tableBar{
+	padding-top:10px ;
+	padding-left: 4px;
+} 
+.setMore{
+	text-align: center;
+}
+.deleteBtn{
+	width: 90px!important;
+}
+.cancelAll{
+	width: 90px!important;
+}
+
+.close{
+	color: white;
+	opacity: 0.5;
+}
+
+.tradingBtn{
+	color: white!important;
+}
+.c2cBuyBtn{
+	background-color:green!important;
+}
+.c2cSellBtn{
+	 background-color:#d36362!important;
+}
+
+td{
+	/*border: 0!important;*/
+}
+.pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover, .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover{
+	background-color: #85181e!important;
+    border-color: #85181e!important;
+    color: white!important;
+}
+#tableBar span.form-inline{
+	cursor: pointer;
+	position: relative;
+	top: 3px;
+}
+.kycSubmitBtn{
+	position: relative;
+    left: 40px;
+    top: 20px;
+    border-radius: 100px!important;
+}
+footer .footer-top div p{
+	line-height:25px ;
+	color: gray;
+}
+footer .footer-top div p a{
+	font-size: 14px;
+}
+.dataBox ul li span{
+	margin-left: 5px;
+}
+table thead tr th{
+	white-space: nowrap;
+}

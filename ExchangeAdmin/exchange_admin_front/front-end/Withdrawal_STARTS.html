@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title> </title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+
+    <link rel="shortcut icon" href="favicon.ico"> <link href="css/bootstrap.min.css?v=3.3.6" rel="stylesheet">
+    <link href="css/font-awesome.css?v=4.4.0" rel="stylesheet">
+
+    <!-- orris -->
+    <link href="css/plugins/morris/morris-0.4.3.min.css" rel="stylesheet">
+
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/style.css?v=4.1.0" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/custom/custom.css"/>
+
+</head>
+
+<body class="gray-bg">
+	     <div class="toolbar" id="tableToolBar">
+                          <div class="pull-right col-sm-8 col-md-8 col-lg-8 col-xs-8">
+                          	 <button class="btn pull-right" id="searchBtn">Search</button>
+                          	<input type="text" class="searchINput col-sm-2 col-md-2 col-lg-2 col-xs-2" placeholder="Crypto." id="userName" />
+                        <input type="text" placeholder="Start Time" class="searchINput col-sm-2 col-md-2 col-lg-2 col-xs-2" id="startTime"/>
+                        <input type="text" placeholder="End Time" class="searchINput col-sm-2 col-md-2 col-lg-2 col-xs-2" id="endtime" />
+
+                          </div>
+                        </div>
+    <div class="wrapper wrapper-content animated fadeInRight">
+        <div class="row">
+
+            <div class="col-sm-12">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>withdrawal</h5>
+                        <div class="ibox-tools">
+                            <a class="collapse-link">
+                                <i class="fa fa-chevron-up"></i>
+                            </a>
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="graph_flot.html#">
+                                <i class="fa fa-wrench"></i>
+                            </a>
+                            <ul class="dropdown-menu dropdown-user">
+                                <li><a href="graph_flot.html#">选项1</a>
+                                </li>
+                                <li><a href="graph_flot.html#">选项2</a>
+                                </li>
+                            </ul>
+                            <a class="close-link">
+                                <i class="fa fa-times"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="ibox-content">
+
+                        <div class="echarts" id="echarts-bar-chart"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+         <!-- 全局js -->
+         <script src="js/jquery.min.js?v=2.1.4"></script>
+         <script src="js/bootstrap.min.js?v=3.3.6"></script>
+
+         <!-- ECharts -->
+         <script src="js/plugins/echarts/echarts-all.js"></script>
+
+         <!-- 自定义js -->
+         <script src="js/content.js?v=1.0.0"></script>
+
+
+         <!-- ECharts demo data -->
+         <script src="js/withdrawal_STARTS_echart.js"></script>
+
+
+
+
+</body>
+
+</html>

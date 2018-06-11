@@ -1,0 +1,616 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../dist/libs/bootstrap-3.3.5/css/bootstrap.min.css"/>
+        <link rel="stylesheet" type="text/css" href="../dist/bootstrap-select/css/bootstrap-select.css"/>
+        <!--<script src="../dist/layui-v2.2.5/css/modules/layer/default/layer.css"></script>-->
+		<link rel="stylesheet" type="text/css" href="../dist/icomoon/style.css"/>
+		<!--<link rel="stylesheet" type="text/css" href="../dist/layui-v2.2.5/css/layui.css"/>-->
+		<link rel="stylesheet" type="text/css" href="../dist/plugs/slider/css/bootstrap-slider.min.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/common.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/style.css"/>
+		<link rel="stylesheet" type="text/css" href="../dist/plugs/bootstrap-Table/bootstrap-table.min.css"/>
+        <script src="/webjars/sockjs-client/sockjs.min.js"></script>
+    <script src="/webjars/stomp-websocket/stomp.min.js"></script>
+        <script src="../dist/plugs/Echarts/dist/echarts.js"></script>
+	
+	</head>
+	
+	<body>
+		<header class="header">
+			
+			<div class="topBox">
+				<span>Welcome  to  Company  Exchange  website!</span>
+				 <ul class="ulList">
+				 	<li>
+				 		<div class="dropdown">
+						<button type="button" class="btn dropdown-toggle" id="dropdownMenu1" 
+								data-toggle="dropdown">
+							Help
+		<span class="caret"></span>
+	</button>
+	<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+		<li role="presentation">
+			<a role="menuitem" tabindex="-1" href="guide.html">Guide</a>
+		</li>
+		<li role="presentation">
+			<a role="menuitem" tabindex="-1" href="faq.html">FAQ</a>
+		</li>
+		<li role="presentation">
+			<a role="menuitem" tabindex="-1" href="fee.html">Fee</a>
+		</li>
+		<li role="presentation">
+			<a role="menuitem" tabindex="-1" href="security.html">Securtiy</a>
+		</li>
+		</ul>
+     </div>
+				 	</li>
+				 	<li> <a href="support_feedback.html"> Support </a></li>
+				 	<li id="loginLi"><a id="loginBtn" data-toggle="modal" data-target="#myModal"> Login </a> </li>
+				 	<li id="liLast"><a href="Register.html">  Register  </a></li>
+				 </ul>
+				
+				  
+			</div>
+			<nav class="navBox ">
+				<div class="navImageBox">
+					<img src="../images/gbx-logo.png"/>
+				      
+				</div>
+				 <div class="navlist">
+				  	<ul class="">
+	<li class="active"><a href="home.html">Home</a></li>
+	<li><a href="exchange.html">OTC Trading</a></li>
+	<li><a href="trade.html">Token Trading</a></li>
+	<li><a href="product.html">Product</a></li>
+	<li class="hide" id="userItem"><a href="user.html">User</a></li>
+	
+</ul>
+				  </div>
+			</nav>
+		</header>
+		  <div class="container contentBox tradeContent">
+		  	  <div class="contentTop ">
+		  	  	
+		  	  	 <div class="topLeft leftBox price setMargin">
+		  	  	 	<div class="currencyType" id="currencyTextContent">RKT/BTC</div>
+		  	  	 	<div class="currencyPrice">
+		  	  	 		<div class="newPrice" id="newPrice">0</div>
+		  	  	 		<div style="font-size: 16px;line-height: 2;font-size: 14px;">New Price</div>
+		  	  	 	</div>
+		  	  	 </div>
+		  	  	 <!--<div class="topRight rightBox transactionData">
+		  	  	 	<div class="rightTop setMargin dataBox">
+		  	  	 		<ul>
+		  	  	 			<li class="timeTiele">Yesterday:</li>
+		  	  	 			<li>Top:<span class="topData" id="yesterdayTopData">0</span></li>
+		  	  	 			<li>Bottom:<span class="bottomData" id="yesterdayBottomData">0</span></li>
+		  	  	 			<li>Open:<span class="openData" id="yesterdayOpenData">0</span></li>
+		  	  	 			<li>Volume:<span class="volumeData" id="yesterdayVolumeData">0</span></li>
+		  	  	 		</ul>
+		  	  	 	</div>
+		  	  	 	<div class="rightBottom setMargin dataBox">
+		  	  	 		<ul>
+		  	  	 			<li class="timeTiele">Today:</li>
+		  	  	 			<li>Top:<span class="topData" id="todayTopData">0</span></li>
+		  	  	 			<li>Bottom:<span class="bottomData" id="todayBottomData">0</span></li>
+		  	  	 			<li>Open:<span class="openData" id="todayOpenData">0</span></li>
+		  	  	 			<li>Volume:<span class="volumeData" id="todayVolumeData">0</span></li>
+		  	  	 		</ul>
+		  	  	 	</div>
+		  	  	 </div>-->
+		  	  	 
+		  	  	  <div class="topRight rightBox transactionData" style="margin-right:5px;">
+		  	  	 	<!--<div class="rightTop setMargin dataBox">
+		  	  	 		<ul>
+		  	  	 			<li class="timeTiele">Yesterday:</li>
+		  	  	 			<li>Top:<span class="topData" id="yesterdayTopData">0</span></li>
+		  	  	 			<li>Bottom:<span class="bottomData" id="yesterdayBottomData">0</span></li>
+		  	  	 			<li>Open:<span class="openData" id="yesterdayOpenData">0</span></li>
+		  	  	 			<li>Volume:<span class="volumeData" id="yesterdayVolumeData">0</span></li>
+		  	  	 		</ul>
+		  	  	 		
+		  	  	 		
+		  	  	 		
+		  	  	 		
+		  	  	 	</div>
+		  	  	 	<div class="rightBottom setMargin dataBox">
+		  	  	 		<ul>
+		  	  	 			<li class="timeTiele">Today:</li>
+		  	  	 			<li>Top:<span class="topData" id="todayTopData">0</span></li>
+		  	  	 			<li>Bottom:<span class="bottomData" id="todayBottomData">0</span></li>
+		  	  	 			<li>Open:<span class="openData" id="todayOpenData">0</span></li>
+		  	  	 			<li>Volume:<span class="volumeData" id="todayVolumeData">0</span></li>
+		  	  	 		</ul>
+		  	  	 	</div>-->
+		  	  	 	
+		  	  	 	
+		  	  	 	<table class="table coinMarketSummary setMargin" border="0">
+		  	  	 		
+		  	  	 		<tr>
+		  	  	 			<td class="dayTime">Yesterday:</td>
+		  	  	 			<td>Top:<span class="topData" id="yesterdayTopData">0</span></td>
+		  	  	 			<td>Bottom:<span class="bottomData" id="yesterdayBottomData">0</span></td>
+		  	  	 			<td>Open:<span class="openData" id="yesterdayOpenData">0</span></td>
+		  	  	 			<td>Volume:<span class="volumeData" id="yesterdayVolumeData">0</span></td>
+		  	  	 		</tr>
+		  	  	 		<tr>
+		  	  	 			<td class="dayTime">Today:</td>
+		  	  	 			<td>Top:<span class="topData" id="todayTopData">0</span></td>
+		  	  	 			<td>Bottom:<span class="bottomData" id="todayBottomData">0</span></td>
+		  	  	 			<td>Open:<span class="openData" id="todayOpenData">0</span></td>
+		  	  	 			<td>Volume:<span class="volumeData" id="todayVolumeData">0</span></td>
+		  	  	 		</tr>
+		  	  	 		
+		  	  	 	</table>
+		  	  	 	
+		  	  	 	
+		  	  	 	
+		  	  	 	
+		  	  	 </div>
+		  	  	 
+		  	  	 
+		  	  	 
+		  	  	 
+		  	  	 
+		  	  	 
+		  	  	 
+		  	  	 
+		  	  	 
+		  	  	 
+		  	  	 
+		  	  	 
+		  	  </div>
+		  	  <div class="contentMiddle">
+		  	  	<div class="middleTop setMargin">
+                 <div class="leftBox setMargin coinUpDownBox">
+		  	  			
+		  	  			<ul id="CurrencyTypeTab" class="nav nav-tabs">
+		  	  				
+		  	  	<li class="active " style="margin-left: 37%;" >
+				<a href="#ethCurrency" data-toggle="tab" class="coins">BTC</a>
+				</li>			
+				<li class=""   >
+					<a href="#home" data-toggle="tab" class="coins">
+					 ETH
+					</a>
+				</li>
+				
+	
+</ul>
+<div id="currencyTypeTabContent" class="upDownContent tab-content">
+	   
+	 
+	 	<ul class="priceChangeLists" id="upDownList"></ul>
+	 
+  <!--<div class="tab-pane fade" id="ethCurrency">456</div>-->
+	 
+</div>
+		  	  		</div>
+		  	  		<div class="rightBox setMargin ">
+		  	  			<div class="boxHeader">
+		  	  				<ul class="chartBoxTop" id="selectTime">
+		  	  					<li style="background: #85181e;color: white;">1M</li>
+		  	  					<li>5M</li>
+		  	  					<li>15M</li>
+		  	  					<li>30M</li>
+		  	  					<li>1H</li>
+		  	  					
+		  	  					<li>4H</li>
+		  	  					
+		  	  					<li>12H</li>
+		  	  					<li>1D</li>
+		  	  					<li>1W</li>
+		  	  					<li>MN</li>
+		  	  				</ul>
+		  	  				 
+		  	  			</div>
+		  	  			 <div class="chartsCanvas" id="chartMain"></div>
+		  	  			</div>
+		  	  	</div>
+		  	  	<div class="middleBottom setMargin">
+		  	  		<div class="leftBox openOrder setMargin">
+		  	  			<div class="boxHeader">
+		  	  			  <span style="font-size: 18px;">OrderBook</span>
+		  	  			  <span class="icon icon-goup hide"></span>	
+		  	  			</div>
+		  	  			<div class="pendingOrderTable">
+		  	  				<h5 ><span class="orderPrice">Price</span><span class="orderAmount">Amount</span></h5>
+		  	  				<div class="buyPending dealPending" id="buyPendingBox"></div >
+		  	  					<h5 ><span class="orderPrice">Price</span><span class="orderAmount">Amount</span></h5>
+		  	  				<div class="sellPending dealPending" id="sellPendingBox"></div>
+		  	  				
+		  	  		
+		  	  				
+		  	  			</div>
+		  	  			</div>
+		  	  		<div class="rightBox ">
+		  	  			<div class="boxHeader"></div>
+		  	  			<div class="boxHeader avaliable">
+		  	  				<div class="availableBox">
+			  	  		  		  	
+			  	  		  	
+			  	  		  		
+			  	  		  		
+			  	  	<span>Available:</span>	  		
+			  	<span id="TradeCoinAvailable"></span><span id="dealText1" class="cointype" >RKT</span><span id="iconMark" class="">/</span><span id="BaseCoinAvailable"></span><span id="dealText3" class="cointype">BTC</span>  		  		
+			  	  		  		
+			  	  		  		
+			  	  		  		
+			  	  		  		
+			  	  		  		  	
+			  	  		  		    </div>
+		  	  			</div>
+		  	  		   <div class="setCustomStyle">
+		  	  		   	
+		  	  		   	  <div class="buyTbcBox setMargin">
+		  	  		  	 
+		  	  		  	<div class="dealContent tradeFormContent">
+		  	  		  		 
+		  	  		  		  
+		  	  		  		<form action="" id="trade_buyForm" >
+		  	  		  			<div class="col-sm-8 dealTextBox dealBoxTitle ">
+		  	  		  		 		
+		  	  		  		 		<label for="">Price</label>
+		  	  		  		 	</div>
+		  	  		  			<div class="col-sm-8 dealTextBox ">
+		  	  		  				<input type="text" id="buyPriceText" class='grayBorder form-control text_group' name="price" placeholder="Buy Price :"   />
+		  	  		  				<!--<span class="tokenText ">11</span>-->
+		  	  		  				<span  class="glyphicon baseToken  form-control-feedback defToken" id="baseText">BTC</span>
+		  	  		  			</div>
+		  	  		  			<div class="col-sm-8 dealTextBox dealBoxTitle">
+		  	  		  		 		
+		  	  		  		 		<label for="">Amount</label>
+		  	  		  		 	</div>
+		  	  		  			<div class="col-sm-8 dealTextBox">
+		  	  		  				<input type="text" id="buyAmountText" class='grayBorder form-control' name="amount" placeholder="Amount :" />
+		  	  		  				<span class="glyphicon tradeToken form-control-feedback defToken" id="tradeText">RKT</span>
+		  	  		  			</div>
+		  	  		  			
+		  	  		  			<div class="col-sm-8 dealTextBox sliderMargin">
+		  	  		  				<div class='slider-example'>
+      		               <input id="buySlide" type="text"  data-slider-min="0" data-slider-max="" data-slider-step="1" data-slider-value="0"/>
+                      	</div>
+			  	  		  			</div>
+		  	  		  		<span class="rangeNumber pull-left">0%</span><span class="rangeNumber pull-right" id="buyRangeMaxNumber">100%</span>
+		  	  		  		  <div>
+		  	  		         
+		  	  		         <div class="col-sm-8 tradeTextBox totalBox">
+		  	  		  			
+		  	  		  	Total:<span class="totalText" id="buyTotal"></span>
+		  	  		  		</div>
+		  	  		  		  <div class="col-sm-8 dealTextBox ">
+		  	  		  				<input type="password" id="buyPassword" name="password" class='grayBorder form-control ' name="amount" placeholder="Password:" />
+		  	  		  			</div>
+		  	  		  		  </div>
+                               <div class="col-sm-12 tradeTextBox">
+                               	   <button data-toggle="modal"  form="trade_buyForm"  class="buyButton" id="buyBtn">Buy <span id="dealText2" data-Symbol='RKT/BTC'>RKT</span></button>
+                               </div>
+                         </form>
+  		  	  		  	</div>
+		  	  		  </div>
+		  	  		  <div class="sellTbcBox setMargin">
+		  	  		  	
+		  	  		  	<div class="dealContent">
+		  	  		  		
+		  	  		  		 <form action="" id="trade_sellForm">
+		  	  		  		 	<div class="col-sm-8 dealTextBox dealBoxTitle">
+		  	  		  		 		
+		  	  		  		 		<label for="">Price</label>
+		  	  		  		 	</div>
+		  	  		  		 	<div class="col-sm-8 dealTextBox ">
+		  	  		  		 		
+		  	  		  		 		<input type="text" id="sellPriceText" class='grayBorder form-control' name="price" placeholder="Sell Price :"  />
+		  	  		  		 		<span class="glyphicon baseToken form-control-feedback defToken">BTC</span>
+		  	  		  		 	</div>
+		  	  		  		 	<div class="col-sm-8 dealTextBox dealBoxTitle">
+		  	  		  		 		
+		  	  		  		 		<label for="">Amount</label>
+		  	  		  		 	</div>
+		  	  		  		<div class="col-sm-8 dealTextBox">
+		  	  		  			<input class='grayBorder  form-control' id="sellAmountText" type="text" name="amount"  placeholder="Sell Amount :" />
+		  	  		  			<span class="glyphicon tradeToken  form-control-feedback defToken">RKT</span>
+		  	  		  		</div>
+		  	  		  		
+		  	  		  		<div class="col-sm-8 dealTextBox sliderMargin">
+		  	  		  			<div class='slider-example'>
+      		               <input id="sellSlide" type="text"  data-slider-min="0" data-slider-max="" data-slider-step="1" data-slider-value="0"/>
+                      	</div>
+		  	  		  		</div>
+		  	  		  		<span class="rangeNumber pull-left">0%</span><span class="rangeNumber pull-right" id="sellRangeMaxNumber">100%</span>
+		  	  		  		<div class="col-sm-8 tradeTextBox totalBox">
+		  	  		  			Total:<span class="totalText" id="sellTotal"></span>
+		  	  		  		</div>
+		  	  		  		
+		  	  		  		 <div class="col-sm-8 dealTextBox">
+		  	  		  				<input type="password" id="sellPassword" name="password" class='grayBorder form-control ' name="amount" placeholder="Password:" />
+		  	  		  			</div>
+		  	  		  		
+		  	  		  		
+		  	  		  		 	<div class="col-sm-12 tradeTextBox">
+		  	  		  		 		<button data-toggle="" form="trade_sellForm" type="submit" data-target="" class="sellButton" id="sellBtn">Sell <span id="dealText4">RKT
+		  	  		  		</span></button>
+		  	  		  		 	</div>
+		  	  		  		 </form>
+		  	  		  		
+		  	  		  	</div>
+		  	  		  </div>
+		  	  		   	
+		  	  		   </div>
+		  	  		  
+		  	  		</div>
+		  	  	</div>
+		  	  	
+		  	  </div>
+		  	  <div class="contentBottom setMargin">
+		  	  	
+		  	  	<ul id="" class="nav nav-tabs">
+	<li class="active">
+		<a href="#openOrder" data-toggle="tab">
+			 Pending Order
+		</a>
+	</li>
+	<li><a href="#historyOrder" data-toggle="tab">History Order</a></li>
+	<!--<span class="pull-right allOrders"><a href="#" id="allOrdersBtn">All Orders</a></span>-->
+</ul>
+<div id="myTabContent" class="tab-content">
+	<div class="tab-pane fade in active" id="openOrder">
+		<table id="openOrderTable" class="table-responsive"></table>
+	</div>
+	<div class="tab-pane fade" id="historyOrder">
+		<table id="historyOrderTable" class="table-responsive"></table>
+	</div>
+	
+</div>
+		  	  </div>
+		  </div>
+   <footer>
+
+			<div class="footer-top">
+				<div class="IconBox">
+					<img src="../images/gbx-logo.png" />
+					<p>Offical Wedsite:https://company.com/</p>
+				</div>
+
+				<div class="faq">
+					<h3>FAQ</h3>
+					<p>
+						<a href="faq.html">Basic Knowledge</a>
+					</p>
+
+					<p>
+						<a href="faq.html">Register&Login</a>
+					</p>
+					<p>
+						<a href="faq.html">Trade</a>
+					</p>
+					<p>
+						<a href="faq.html">Deposit&Withdrawal</a>
+					</p>
+					<p>
+						<a href="faq.html">Wallet</a>
+					</p>
+				</div>
+				<div>
+					<h3>Guide</h3>
+					<p>
+						<a href="guide.html">KYC Authentication</a>
+					</p>
+					<p>
+						<a href="guide.html">Register&Login</a>
+					</p>
+					<p>
+						<a href="guide.html">Security Settings</a>
+					</p>
+					<p>
+						<a href="guide.html">Deposit&Withdrawal</a>
+					</p>
+					<p>
+						<a href="guide.html">Trade</a>
+					</p>
+					<p>
+						<a href="guide.html">Wallet</a>
+					</p>
+				</div>
+
+			</div>
+			<div class="footer-bottom">
+				<h3>Company  ©   2018. All Rights Reserved.</h3>
+				
+				<p>All information presented on this website is for informational purposes only, and is subject to change without notice. This website is not intended to be investment advice, or an offer or solicitation for the purchase or sale of any financial instrument or product.
+				</p>
+				<p>
+					By offering information, products or services via this website, no solicitation is made by us to any person to use such information, products or services in any jurisdiction where the provision of such information, products or services may be prohibited by law.
+				</p>
+			</div>
+		</footer>
+    
+         
+             <div class="modal fade" id="cancelAllModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+					&times;
+				</button>
+				<h4 class="modal-title" id="myModalLabel">
+					Reminder
+				</h4>
+			</div>
+			<div class="modal-body">
+				Confirm Cancel All orders?
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-warning" data-dismiss="modal">No
+				</button>
+				<button type="button" class="btn btn-default" id="cancelAllBtn">
+					Yes
+				</button>
+			</div>
+		</div>
+	</div>
+</div>
+      <div class="modal fade cancelModal" id="cancelModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+					&times;
+				</button>
+				<h4 class="modal-title" id="myModalLabel">
+					Reminder
+				</h4>
+			</div>
+			<div class="modal-body">
+				Are you sure you want to delete this  order?
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn  btn-warning" data-dismiss="modal">No
+				</button>
+				<button type="button" class="btn btn-default" id="cancelBtn">
+					Yes
+				</button>
+			</div>
+		</div>
+	</div>
+</div>
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel" style="text-align: center;">Login</h4>
+           
+            </div>
+            <div class="modal-body">
+            	 
+				 	   
+				 	 <form id="lgPassWordForm" method="post" class="loginForm form-horizontal" action="" novalidate="novalidate">
+
+										<div class="form-group">
+                                              <label class="col-sm-3 control-label" for="lgEmail">Email</label>
+											<div class="center-block col-sm-7 ">
+												<input type="text" class="form-control" id="lgEmail" name="lgEmail" placeholder="Email" >
+											</div>
+										</div>
+										<div class="form-group">
+                                          <label class="col-sm-3 control-label" for="lgPassword">Password</label>
+											<div class="col-sm-7 ">
+												<input type="password" class="form-control" id="lgPassword" name="lgPassword" placeholder="Password" >
+											</div>
+										</div>
+
+										<div class="form-group">
+
+											<div class="setMore otherHandle">
+			<span><a href="password_record.html">Password Recovery</a></span>
+												<span><hr /></span>
+												<span><a href="Register.html">Register</a></span>
+											</div>
+										</div>
+
+										<div class="center-block">
+											<button type="submit" class=" submitBtn center-block" form="lgPassWordForm" id="loginButton" >Login</button>
+										</div>
+
+									</form>
+				 	 
+				 
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+    <!--//modalMsg//-->
+      <div class="modal fade" id="msgModal " tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×
+				</button>
+				<h4 class="modal-title" id="">
+					模态框（Modal）标题
+				</h4>
+			</div>
+			<div class="modal-body">
+				点击关闭按钮检查事件功能。
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">
+					关闭
+				</button>
+				<button type="button" class="btn btn-primary">
+					提交更改
+				</button>
+			</div>
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+      <!--modalMsg-->
+	</body>
+	
+	<script src="../dist/libs/jquery-2.1.4/jquery.min.js"></script>
+	
+	<!--<script src="../dist/libs/layui-v2.2.5/layui.js"></script>-->
+	 
+	 <script src="http://apps.bdimg.com/libs/jquery.cookie/1.4.1/jquery.cookie.min.js"></script>
+	<script src="../dist/plugs/jquery.validate.min.js"></script>
+	 
+	<script src="../dist/libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+	<script src="../dist/bootstrap-select/js/bootstrap-select.js"></script>
+	<script src="../dist/plugs/slider/js/bootstrap-slider.js"></script>
+	<script src="../dist/plugs/bootstrap-Table/bootstrap-table.min.js"></script>
+	<script src="../js/public.js"></script>
+	<script src="../js/validate_custom.js"></script>
+	
+	 <script src="../dist/plugs/Echarts/dist/echarts (1).js"></script>
+  
+ 
+    <script src="../js/tradeHandle.js"></script>
+    
+ 
+  <script type="text/javascript" src="../js/script.js"></script>
+ 
+    <script type="text/javascript">
+    	  $(function(){
+    	  	 
+    	  	 $("#buySlide").slider({
+    	  	 		tooltip: 'always',
+					min:0,
+					max:100,
+                    formatter: function(value) {
+		            return value + '%';
+                                            	},
+                    
+                    
+    	  	 	   }).on('change',function(e){
+    	  	 	   	  console.log(e.value.newValue)
+    	  	 	   });
+            $("#sellSlide").slider({
+					tooltip: 'always',
+					min:0,
+					max:100,
+					formatter: function(value) {
+		            return value + '%';
+                                            	},
+				});
+
+			
+
+           	
+  
+           	
+           	
+    	  	
+    	  })
+    	    
+    	     
+    	     
+    	 
+    </script>
+      
+</html>

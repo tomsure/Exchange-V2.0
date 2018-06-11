@@ -1,0 +1,51 @@
+id: 21
+
+server:
+    port: 9999
+
+spring:
+    rabbitmq:
+        listener:
+            simple:
+                acknowledge-mode: none
+
+redis:
+    database: 0
+    host: 47.75.72.244
+    port: 6379
+    password: 123$abc
+    pool:
+      maxIdle: 20
+      minIdle: 2
+                
+mq:
+    host: 47.75.72.244
+    port: 5672
+    username: admin
+    password: 123abc@
+    vhost: /ExchangeVH_v2
+    exchange: t_node_grp
+    market:
+      MARKET.ANS: marketServ
+    queue: 
+        C2C.ANS: key.c2c.res
+        MANAGE.ANS: WebSrv
+        ORDER.ANS: wsid
+        WebReportQueue: ReportSrv2Web
+        ORDERBOOK: orderbook
+    routingKey:
+        manageServ: manger_bkey
+        orderServ: order
+        reportServ: Web2ReportSrv
+        c2cServ: key.c2c.req
+        securityServ: key.security.email.req
+        
+default:
+    c2cBaseCoin: BTC
+    baseCoin: BTC
+    token: RKT/BTC
+    count: 50
+    timeframe: M1
+
+candle:
+  timeframes: M1,M5,M15,M30,H1,H4,H12,D1,W1,MN

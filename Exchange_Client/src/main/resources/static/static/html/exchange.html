@@ -1,0 +1,744 @@
+﻿<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../dist/libs/bootstrap-3.3.5/css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="../dist/icomoon/style.css" />
+		<link rel="stylesheet" type="text/css" href="../dist/libs/layui-v2.2.5/css/layui.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/common.css" />
+		<link rel="stylesheet" type="text/css" href="../css/style.css" />
+		<link rel="stylesheet" type="text/css" href="../dist/plugs/bootstrap-Table/bootstrap-table.min.css" />
+		<link rel="stylesheet" type="text/css" href="" />
+		<script src="../dist/plugs/Echarts/dist/echarts.js"></script>
+		  <script src="../dist/libs/layui-v2.2.5/layui.js"></script>
+	</head>
+
+	<body>
+		<header class="header">
+			
+			<div class="topBox">
+				<span>Welcome  to  Company  Exchange  website!</span>
+				 <ul class="ulList">
+				 	<li>
+				 		<div class="dropdown">
+						<button type="button" class="btn dropdown-toggle" id="dropdownMenu1" 
+								data-toggle="dropdown">
+							Help
+		<span class="caret"></span>
+	</button>
+	<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+		<li role="presentation">
+			<a role="menuitem" tabindex="-1" href="guide.html">Guide</a>
+		</li>
+		<li role="presentation">
+			<a role="menuitem" tabindex="-1" href="faq.html">FAQ</a>
+		</li>
+		<li role="presentation">
+			<a role="menuitem" tabindex="-1" href="fee.html">Fee</a>
+		</li>
+		<li role="presentation">
+			<a role="menuitem" tabindex="-1" href="security.html">Securtiy</a>
+		</li>
+		</ul>
+     </div>
+				 	</li>
+				 	<li> <a href="support_feedback.html"> Support </a></li>
+				 	<li id="loginLi"><a id="loginBtn" data-toggle="modal" data-target="#myModal"> Login </a> </li>
+				 	<li id="liLast"><a href="Register.html">  Register  </a></li>
+				 </ul>
+				
+				  
+			</div>
+			<nav class="navBox ">
+				<div class="navImageBox">
+					<img src="../images/gbx-logo.png"/>
+				      
+				</div>
+				 <div class="navlist">
+				  	<ul class="">
+	<li class="active"><a href="home.html">Home</a></li>
+	<li><a href="exchange.html">OTC Trading</a></li>
+	<li><a href="trade.html">Token Trading</a></li>
+	<li><a href="product.html">Product</a></li>
+	<li class="hide" id="userItem"><a href="user.html">User</a></li>
+	
+</ul>
+				  </div>
+			</nav>
+		</header>
+		<div class="container contentBox tradeContent">
+
+			<div class="contentMiddle">
+				<div class="middleTop setMargin c2cDdealBox c2cContentMiddleTop" >
+					<div class=" setMargin c2cTransactionPrice">
+
+						<ul class="nav nav-tabs nav-stacked " id="coinlist">
+							
+							
+						</ul>
+						<div class="c2cPriceBox">
+							<div class="boxHeader">
+								<span class="lead" >New Price</span>
+								
+								<span class="priceRise" id="newPrice"></span>
+							</div>
+							<div class="tab-content" id="coinMarketTab">
+								<div class="tab-pane in active" id="ethCurrency">
+									<table class="table">
+										<thead>
+											<tr>
+												<th></th>
+												<th>Yesterday</th>
+												<th>Today</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>Top</td>
+												<td><span id="ydTop"></span>
+												<td><span id="tdTop"></span>
+											</tr>
+											<tr>
+												<td>Bottom</td>
+												<td><span id="ydBottom"></span>
+												<td><span id="tdBottom"></span>
+											</tr>
+											<tr>
+												<td>Volume</td>
+												<td><span id="ydVol"></span></td>
+												<td><span id="tdVol"></span></td>
+
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<div class="tab-pane" id="ltcCurrency">
+									<table class="table">
+										<thead>
+											<tr>
+												<th></th>
+												<th>Yestoday</th>
+												<th>Today</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>Top</td>
+												<td>122342 </td>
+												<td>Volume</td>
+											</tr>
+											<tr>
+												<td>Bottom</td>
+												<td>Smita</td>
+												<td>Pallod</td>
+											</tr>
+											<tr>
+												<td>Volume</td>
+												<td>Rabindranath</td>
+												<td>Sen</td>
+
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<div class="tab-pane" id="xrbCurrency">
+									<table class="table">
+										<thead>
+											<tr>
+												<th></th>
+												<th>Yestoday</th>
+												<th>Today</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>Top</td>
+												<td>22 </td>
+												<td>2342r2q</td>
+											</tr>
+											<tr>
+												<td>Bottom</td>
+												<td>Smita</td>
+												<td>Pallod</td>
+											</tr>
+											<tr>
+												<td>Volume</td>
+												<td>Rabindranath</td>
+												<td>Sen</td>
+
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<div class="tab-pane" id="btmCurrency">
+									<table class="table">
+										<thead>
+											<tr>
+												<th></th>
+												<th>Yestoday</th>
+												<th>Today</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>Top</td>
+												<td>33 </td>
+												<td>Volume</td>
+											</tr>
+											<tr>
+												<td>Bottom</td>
+												<td>Smita</td>
+												<td>Pallod</td>
+											</tr>
+											<tr>
+												<td>Volume</td>
+												<td>Rabindranath</td>
+												<td>Sen</td>
+
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<div class="tab-pane" id="usdtCurrency">
+									<table class="table">
+										<thead>
+											<tr>
+												<th></th>
+												<th>Yestoday</th>
+												<th>Today</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>Top</td>
+												<td>44 </td>
+												<td>Volume</td>
+											</tr>
+											<tr>
+												<td>Bottom</td>
+												<td>Smita</td>
+												<td>Pallod</td>
+											</tr>
+											<tr>
+												<td>Volume</td>
+												<td>Rabindranath</td>
+												<td>wegew</td>
+
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+
+					</div>
+					<div class="rightBox setMargin">
+						<div class="boxHeader dealHeader">
+							<span class="lead">Pending Order</span>
+							<!--<span>Unsuitable Price?</span>-->
+							<span class="releaseBtn " data-toggle="modal" data-target="#releaseModal">Release Transaction</span>
+						</div>
+						<div class="">
+							<table class="table" id="buyBox">
+								<thead>
+									<th>ID</th>
+									<th>Price</th>
+									<th>Amount</th>
+									<th>Token</th>
+									<th>Total</th>
+								</thead>
+								<tbody id="buyBoxTbody">
+									
+								</tbody>
+							</table>
+							<table class="table" id="sellBox">
+								<thead>
+									<th>ID</th>
+									<th>Price</th>
+									<th>Amount</th>
+									<th>Token</th>
+									<th>Total</th>
+								</thead>
+								<tbody id="sellBoxTbody">
+									
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="contentBottom setMargin">
+
+				<ul id="myTab" class="nav nav-tabs">
+					<li class="active">
+						<a href="#userOpenOrder" data-toggle="tab">Open Order</a>
+					</li>
+					<li>
+						<a href="#userPendingOrder" data-toggle="tab">Pending Order</a>
+					</li>
+					<li>
+						<a href="#userHistoryOrder" data-toggle="tab">History Order</a>
+					</li>
+					<span class="pull-right allOrders"><a href="open_order.html">All Orders</a></span>
+				</ul>
+				<div id="myTabContent" class="tab-content">
+					<div class="tab-pane fade in active" id="userOpenOrder">
+						<table id="c2cUserOpenOrderTable" class="buyDataTable table">
+							<thead>
+								<th>OrderID</th>
+								<th>Cryptocurrency</th>
+								<th>Trade Type</th>
+								<th>Price</th>
+								<th>Total</th>
+							</thead>
+							<tbody id="openOrderTbody"></tbody>
+						</table>
+					</div>
+					<div class="tab-pane fade" id="userPendingOrder">
+						<table id="c2cUserPendingOrderTable" class="buyDataTable table">
+							<thead>
+								<th>OrderID</th>
+								<th>Cryptocurrency</th>
+								<th>Trade Type</th>
+								<th>Price</th>
+								<th>Total</th>
+							</thead>
+							<tbody id="pendingOrderTbody"></tbody>
+						</table>
+					</div>
+					<div class="tab-pane fade" id="userHistoryOrder">
+						<table id="c2cUserHistoryOrderTable" class="buyDataTable table">
+							<thead>
+								<th>OrderID</th>
+								<th>Cryptocurrency</th>
+								<th>Trade Type</th>
+								<th>Price</th>
+								<th>Total</th>
+							</thead>
+							<tbody id="historyOrderTbody"></tbody>
+						</table>
+					</div>
+
+				</div>
+
+			</div>
+		</div>
+
+		<footer>
+
+			<div class="footer-top">
+				<div class="IconBox">
+					<img src="../images/gbx-logo.png" />
+					<p>Offical Wedsite:https://company.com/</p>
+				</div>
+
+				<div class="faq">
+					<h3>FAQ</h3>
+					<p>
+						<a href="faq.html">Basic knowledge</a>
+					</p>
+
+					<p>
+						<a href="faq.html">Register&Login</a>
+					</p>
+					<p>
+						<a href="faq.html">Trade</a>
+					</p>
+					<p>
+						<a href="faq.html">Deposit&Withdrawal</a>
+					</p>
+					<p>
+						<a href="faq.html">Wallet</a>
+					</p>
+				</div>
+				<div>
+					<h3>Guide</h3>
+					<p>
+						<a href="guide.html">KYC authentication</a>
+					</p>
+					<p>
+						<a href="guide.html">Register&Login</a>
+					</p>
+					<p>
+						<a href="guide.html">Security settings</a>
+					</p>
+					<p>
+						<a href="guide.html">Deposit&Withdrawal</a>
+					</p>
+					<p>
+						<a href="guide.html">Trade</a>
+					</p>
+					<p>
+						<a href="guide.html">Wallet</a>
+					</p>
+				</div>
+
+			</div>
+			<div class="footer-bottom">
+				<h3>Company  ©   2018. All Rights Reserved.</h3>
+				
+				<p>All information presented on this website is for informational purposes only, and is subject to change without notice. This website is not intended to be investment advice, or an offer or solicitation for the purchase or sale of any financial instrument or product.
+				</p>
+				<p>
+					By offering information, products or services via this website, no solicitation is made by us to any person to use such information, products or services in any jurisdiction where the provision of such information, products or services may be prohibited by law.
+				</p>
+			</div>
+		</footer>
+
+<div class="modal fade" id="buyModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+					&times;
+				</button>
+						<h4 class="modal-title" id="myModalLabel">
+					 Buy<span id="buyCoinText">BTC</span>
+				</h4>
+					</div>
+					<div class="modal-body releaseBox">
+						
+						<div id="myTabContent" class="tab-content">
+							<div class="tab-pane dealPane fade  in active" id="">  <!--buyTbc-->
+								<form id="otcbuyForm" method="post" class="dealForm form-horizontal" action="" novalidate="novalidate">
+                                        <div class="form-group">
+                             
+											<div class="col-sm-5 " style="text-align: left;">
+												<span>Price:</span><span id="buyCoinPrice"></span><span>USD</span>
+											</div>
+										</div>
+                                       
+                                       
+										<div class="form-group">
+
+											<div class="col-sm-5 ">
+												<input type="" placeholder="Amount(USD):" name="otcBuyAmount" class="form-control" id="otcBuyAmount" value="" />
+											</div>
+										</div>
+										<div class="form-group">
+
+											<div class="col-sm-5">
+												<input type="password" placeholder="Password:" name="otcBuyPassword" class="form-control" id="otcBuyPassword" value="" />
+											</div>
+										</div>
+
+									
+
+										<div class="textBox">
+											<button type="submit" form="otcbuyForm" class="buyColor">Buy <span id="buyCoinBtn">BTC</span></button>
+										</div>
+
+									</form>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+		  
+		<div class="modal fade" id="sellModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+					&times;
+				</button>
+						<h4 class="modal-title" id="myModalLabel">
+					   Sell <span id="sellCoinText">BTC</span>
+				</h4>
+					</div>
+					<div class="modal-body releaseBox">
+						
+						<div id="myTabContent" class="tab-content">
+							<div class="tab-pane dealPane fade  in active" id="">  <!--//buyTbc-->
+								<form id="otcSellForm" method="post" class="dealForm form-horizontal" action="" >
+                                         
+                                         <div class="form-group">
+                             
+											<div class="col-sm-5  " style="text-align: left;">
+												<span>Price:</span><span id="sellCoinPrice"></span> <span>USD</span>
+											</div>
+										</div>
+                                         
+										<div class="form-group">
+                             
+											<div class="col-sm-5 ">
+												<input type="" placeholder="Amount(USD):" name="otcSellAmount" class="form-control" id="otcSellAmount" value="" />
+											</div>
+										</div>
+										<div class="form-group">
+
+											<div class="col-sm-5">
+												<input type="" placeholder="Password:" name="otcSellPassword" class="form-control" id="otcSellPassword" value="" />
+											</div>
+										</div>
+
+									
+
+										<div class="textBox">
+											<button type="submit" form="otcSellForm" class="sellColor">Sell <span id="sellCoinBtn">BTC</span></button>
+										</div>
+
+									</form>
+							</div>
+							
+
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+        
+		<div class="modal fade" id="releaseModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+					&times;
+				</button>
+						<h4 class="modal-title" id="myModalLabel">
+					Release Trasaction  <span>Pay Deposit <span  id="">0.5</span>BTC</span>
+				</h4>
+					</div>
+					<div class="modal-body releaseBox">
+						
+						
+						<!--///-->
+						
+						<ul id="myTab" class="nav nav-tabs">
+							<li class="active whiteColor">
+								<a href="#buyTbc" class="buyColor" data-toggle="tab">
+									Buy <span id='selfBuyTabText'>BTC</span>
+								</a>
+								
+								
+							</li>
+							<li class="whiteColor">
+								<a href="#sellTbc" class="sellColor" data-toggle="tab">Sell <span id="selfSellTabText">BTC</span></a>
+								
+							</li>
+
+						</ul>
+						<div id="myTabContent" class="tab-content">
+							   
+							<div class="tab-pane dealPane fade  in active" id="buyTbc">  
+								<form id="buyForm" method="post" class="dealForm form-horizontal" action="" novalidate="novalidate">
+
+										<div class="form-group">
+
+											<div class="col-sm-5 ">
+												<input type="text" class="form-control" id="buyPrice" name="buyPrice" placeholder="Buy Price（USD）:" />
+											</div>
+										</div>
+										<div class="form-group">
+
+											<div class="col-sm-5">
+												<input type="text" class="form-control" id="buyAmount" name="amount" placeholder="Amount（TBC）:">
+											</div>
+										</div>
+
+										<div class="textBox ">
+											<div class="dealTotal totalBox">
+												<span id="buyTotalContent" class="total">
+				                               Total（USD）:
+			                                   </span>
+												<span id="otcBuyTotal" class="total"></span>
+											</div>
+										</div>
+
+										<div class="textBox">
+											<button type="submit" form="buyForm" class="buyColor">Buy <span id="selfBuyBtn">BTC</span></button>
+										</div>
+										
+
+									</form>
+							</div>
+							<div class="tab-pane dealPane fade" id="sellTbc">
+								
+                                      
+							
+									<form id="sellForm" method="post" class="dealForm form-horizontal" action="" novalidate="novalidate">
+
+										<div class="form-group">
+
+											<div class="col-sm-5 ">
+												<input type="text" class="form-control" id="sellPrice" name="sellPrice" placeholder="Sell Price（USD）:" />
+											</div>
+										</div>
+										<div class="form-group">
+
+											<div class="col-sm-5">
+												<input type="text" class="form-control" id="sellAmount" name="amount" placeholder="Amount（TBC）:">
+											</div>
+										</div>
+
+										<div class="textBox ">
+											<div class="dealTotal totalBox">
+												<span id="sellTotalContent" class="total">
+				Total（USD）:
+			</span>
+												<span id="otcSellTotal" class="total"></span>
+											</div>
+										</div>
+
+										<div class="textBox">
+											<button type="submit" form="sellForm" class="sellColor">Sell <span id="selfSellBtn">BTC</span></button>
+										</div>
+
+									</form>
+								
+
+							</div>
+
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+		
+		<div class="modal fade" id="cancelAllModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+					&times;
+				</button>
+						<h4 class="modal-title" id="myModalLabel">
+					Reminder
+				</h4>
+					</div>
+					<div class="modal-body">
+						Confirm Cancel All orders?
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-warning" data-dismiss="modal">No
+				</button>
+						<button type="button" class="btn btn-default">
+					Yes
+				</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade" id="cancelModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+					&times;
+				</button>
+						<h4 class="modal-title" id="myModalLabel">
+					Reminder
+				</h4>
+					</div>
+					<div class="modal-body">
+						Confirm Cancel This order?
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn  btn-warning" data-dismiss="modal">No
+				</button>
+						<button type="button" class="btn btn-default">
+					Yes
+				</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+
+		<div class="modal fade" id="tipModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+					&times;
+				</button>
+						<h4 class="modal-title" id="myModalLabel">
+					Tip
+				</h4>
+					</div>
+					<div class="modal-body">
+
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn  btn-warning" data-dismiss="modal">Cancel
+				</button>
+						<button type="button" class="btn btn-default">
+					Submit
+				</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel" style="text-align: center;">Login</h4>
+           
+            </div>
+            <div class="modal-body">
+            	 
+				 	   
+				 	 <form id="lgPassWordForm" method="post" class="loginForm form-horizontal" action="" novalidate="novalidate">
+
+										<div class="form-group">
+                                              <label class="col-sm-3 control-label" for="lgEmail">Email</label>
+											<div class="center-block col-sm-7 ">
+												<input type="text" class="form-control" id="lgEmail" name="lgEmail" placeholder="Email" >
+											</div>
+										</div>
+										<div class="form-group">
+                                          <label class="col-sm-3 control-label" for="lgPassword">Password</label>
+											<div class="col-sm-7 ">
+												<input type="password" class="form-control" id="lgPassword" name="lgPassword" placeholder="Password" >
+											</div>
+										</div>
+
+										<div class="form-group">
+
+											<div class="  setMore otherHandle">
+												<span><a href="password_record.html">Password Record</a></span>
+												<span><hr /></span>
+												<span><a href="Register.html">Register</a></span>
+											</div>
+										</div>
+
+										<div class="center-block">
+											<button type="submit" class=" submitBtn center-block" form="lgPassWordForm" id="loginButton" >Login</button>
+										</div>
+
+									</form>
+				 	 
+				 
+            </div>
+            
+        </div>
+    </div>
+</div>
+	</body>
+	<script src="/webjars/sockjs-client/sockjs.min.js"></script>
+    <script src="/webjars/stomp-websocket/stomp.min.js"></script>
+	<script src="../dist/libs/jquery-2.1.4/jquery.min.js"></script>
+	<script src="../dist/libs/layui-v2.2.5/layui.js"></script>
+	<script src="../dist/plugs/jquery.validate.min.js"></script>
+	<script src="../dist/libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+	<script src="../dist/plugs/bootstrap-Table/bootstrap-table.min.js"></script>
+	<script src="../dist/plugs/Echarts/dist/echarts.js"></script>
+	<script src="../dist/plugs/jquery.cookie.js"></script>
+	<script type="text/javascript" src="../js/script.js"></script>
+	
+	
+	<script src="../js/validate_custom.js"></script>
+	<script src="../js/public.js"></script>
+	<script src="../js/c2c_Transaction.js"></script>
+	
+
+</html>

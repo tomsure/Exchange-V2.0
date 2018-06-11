@@ -1,0 +1,78 @@
+@charset "utf-8";
+/* CSS Document */
+*{
+	box-sizing:border-box;
+	-moz-box-sizing:border-box; /* Firefox */
+	-webkit-box-sizing:border-box;  /* Safari */
+	font-family: "微软雅黑", Verdana,Arial,Helvetica,sans-serif;
+	font-size: 16px;
+}
+a,img,button,input,textarea,p,span,ul,div{
+  -webkit-tap-highlight-color:rgba(255,255,255,0);
+}
+html,body,h1,h2,h3,h4,h5,p,form,button,dl,dd,dt {
+  margin:0; padding:0; font-size:100%;
+}
+html, body {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+img {
+  height:auto; /* display:block; */ border:0;
+}
+body {
+   color:#696c71;
+}
+ul,ol,dl,dd,dt {
+  list-style:none; margin:0; padding:0;
+}
+h1,h2,h3,h4 {
+  font-weight:normal;
+}
+a,img,button,input,textarea {
+  outline:none; border:none; background:none; -webkit-appearance:none;
+}
+i,em {
+  font-style: normal;
+}
+a {
+  color: #696c71; text-decoration:none;
+}
+a:hover {
+   text-decoration:none;
+}
+input[type=button],input[type=search],input[type=number],input[type=text],input[type=password],input[type=email]{
+		-webkit-appearance:none;
+		outline:none;
+		padding-left: 10px;
+}
+
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color: #aab1bd; opacity:1;
+    font-size: 14px; 
+}
+
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color: #aab1bd;opacity:1;
+    font-size: 14px; 
+}
+
+input:-ms-input-placeholder{
+    color: #aab1bd;opacity:1;
+    font-size: 14px; 
+}
+
+input::-webkit-input-placeholder{
+    color: #aab1bd;opacity:1;
+    font-size: 14px; 
+}
+
+select{ border: none; padding-left: 10px;}
+.clear{height:0;overflow:hidden}
+.clearfix:after{visibility:hidden;display:block;font-size:0;content:" ";clear:both;height:0}
+.clearfix{zoom:1}
+.fl{float:left}
+.fr{float:right}
+.font14{ font-size: 14px;}
+.font12{ font-size: 12px;}
