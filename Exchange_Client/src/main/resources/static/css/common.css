@@ -608,7 +608,7 @@ table tr td{
 
 /*暂时隐藏Otc*/
  .navlist ul li:nth-child(2){  
- 	display: none;
+ 	/* display: none; */
  }
  /*暂时隐藏垂直菜单最后一条*/
 .verticalMenu .panel:nth-child(4){
